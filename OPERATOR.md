@@ -1,6 +1,6 @@
 # LotGate Operator
 
-The default `npm start` now runs the authenticated operator application. The previous local arithmetic UI remains available only as `npm run start:local`. This release is computation-only: no custody, token transfer, wallet signature, or transaction broadcast.
+The default `npm start` now runs the authenticated operator application. This release is computation-only: no custody, token transfer, wallet signature, or transaction broadcast.
 
 ## Start (PowerShell)
 
@@ -8,7 +8,7 @@ From `<repository>`:
 
 ```powershell
 $env:LOTGATE_TOKEN = node -e "console.log(require('node:crypto').randomBytes(32).toString('hex'))"
-$env:LOTGATE_DATA = '<repository>\data'
+$env:LOTGATE_DATA = './data'
 $env:XLAYER_RPC = 'https://tapeout.net/rpc-xlayer'
 npm start
 ```
@@ -27,7 +27,7 @@ Records are written through a synced temporary file followed by rename. Only one
 
 This is implemented software, not yet a certified production deployment. Before public release:
 
-- Run the full tests with the reviewed parser configured; run browser tests against the new operator UI (the existing browser script covers the legacy UI only).
+- Run npm run verify (no parser required); optionally rebuild/check serial artifacts with the reviewed parser. Full browser regression of the operator UI is still required.
 - Complete live CPU-driven batches and representative 64-order load tests; record duration and RPC limits. A controller request uses approximately 100 sequential RPC calls, with additional multiplier calls per allocation. No completion SLA is established.
 - Validate reverse proxy TLS, secrets handling, process supervision, backup restore, filesystem failure recovery and monitoring on the target host.
 - Review CPU selectors/source provenance independently; returned bytes matching a netlist do not authenticate persistent state.

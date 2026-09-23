@@ -1,7 +1,7 @@
 {
   "parserHash": "a794be064f8a0e1317f2de4ed909cc397f24a6836c048a881b124afffdf42084",
   "strictByteLimit": 34000,
-  "status": "Budget-checked circuit candidates, not deployed; default Session/UI unchanged",
+  "status": "Operator runtime artifacts; deployment identity is configured in deployment/xlayer.json",
   "protocol": {
     "controller": "start+enable captures only when idle and not done; 97 enabled work ticks; observe resultValid on following sample; outputs valid only when resultValid=1; reset clears all state; input changes/start ignored while busy; enable=0 holds all state; done locks until reset",
     "multiplier": "start captures; 32 enabled work ticks; product valid when done=1; intermediate product differs from baseline",
