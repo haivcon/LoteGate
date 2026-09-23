@@ -35,7 +35,7 @@ npm start
 
 ## 架构与电路
 
-- `web/operator/`：越南语运营界面，用于创建和执行批次、下载回执。本次文档汉化不改变界面语言。
+- `web/operator/`：简体中文运营界面，用于创建和执行批次、下载回执。
 - `scripts/operator-server.mjs`：HTTP API，包含身份验证、来源检查和请求限制。
 - `scripts/batch-service.mjs`：串行队列、修订版本检查、磁盘存储、单写入者锁和 API 幂等处理。
 - `src/async-session.mjs`、`scripts/xlayer-runtime.mjs`：异步执行，将 CPU 返回的状态传入下一次 RPC 调用，并在固定区块检查电路字节和维度。
