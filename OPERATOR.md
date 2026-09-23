@@ -1,10 +1,10 @@
-# LotGate Operator
+# LotGate 运营端指南
 
-The default `npm start` now runs the authenticated operator application. This release is computation-only: no custody, token transfer, wallet signature, or transaction broadcast.
+默认命令 `npm start` 启动带身份验证的运营端应用。本版本仅提供计算，不涉及资产托管、代币转账、钱包签名或交易广播。
 
-## Start (PowerShell)
+## 启动方式（PowerShell）
 
-From `<repository>`:
+在仓库根目录执行：
 
 ```powershell
 $env:LOTGATE_TOKEN = node -e "console.log(require('node:crypto').randomBytes(32).toString('hex'))"
@@ -13,25 +13,25 @@ $env:XLAYER_RPC = 'https://tapeout.net/rpc-xlayer'
 npm start
 ```
 
-Open http://127.0.0.1:4173 and enter the token generated above (retrieve it from your shell with `$env:LOTGATE_TOKEN`; do not publish it). For public access, configure `LOTGATE_ORIGIN=https://your-domain`, put an HTTPS reverse proxy in front of loopback port 4173, and preserve the public Host header. Never transmit the access key over public HTTP. Use a secret manager and a supervised process in deployment. Runtime requires Node >=22; no additional runtime dependencies were added.
+打开 http://127.0.0.1:4173 并输入生成的令牌。可通过 `$env:LOTGATE_TOKEN` 在终端查看令牌，请勿公开。对外提供服务时，配置 `LOTGATE_ORIGIN=https://your-domain`，在本机回环地址的 4173 端口前部署 HTTPS 反向代理，并保留公开域名对应的 Host 请求头。不得通过公网明文 HTTP 传输访问密钥。部署时应使用密钥管理工具和进程监督服务。运行环境要求 Node.js >=22，无需额外运行时依赖。
 
-## Workflow and guarantees
+## 工作流程与保障措施
 
-Create a named batch, enter up to 64 integer orders, confirm immutable intake, explicitly start execution, inspect results, export JSON. Same-price orders retain admission priority. A single worker processes persisted jobs sequentially. The CPU identity, pinned block and netlist hashes accompany completed receipts; each batch checks the deployed bytes before executing. CPU-returned next-state feeds the next call. There is no local fallback. An independent arithmetic oracle checks the complete result before publication.
+创建带名称的批次，输入最多 64 笔整数订单，确认锁定输入，显式启动执行，检查结果并导出 JSON。同价订单保留录入优先级。单个工作进程按顺序处理持久化任务。完成的回执包含 CPU 标识、固定区块和网表哈希；每个批次执行前会检查已部署电路的字节。CPU 返回的下一状态用于后续调用，不会回退到本地计算。发布结果前，独立算术校验器检查完整结果。
 
-Authentication covers every API route; the access key is held in page memory, not localStorage. Origin checks, CSP, bounded JSON bodies and basic rate limiting are enabled. This is single-operator authorization, not individual accounts or signed order ownership.
+所有 API 路由均要求身份验证；访问密钥仅保存在页面内存中，不写入 localStorage。系统启用来源检查、CSP、JSON 请求体大小限制及基础限流。这是单运营者授权机制，不提供独立用户账户或带签名的订单归属证明。
 
-Records are written through a synced temporary file followed by rename. Only one service writer may hold the data-directory lock. Queued work resumes on restart. Running work becomes INTERRUPTED and requires explicit retry from immutable input, rather than pretending to resume an unpersisted CPU state. RPC errors fail the batch; retries are operator initiated. Back up the entire data directory while the service is stopped. After a crash, confirm no service process still owns the directory before removing `service.lock`. Filesystem durability and rename semantics must be validated on the deployment storage.
+记录先写入临时文件并同步到磁盘，再通过重命名替换目标文件。数据目录锁仅允许一个服务写入者持有。排队任务会在重启后继续；停机时正在执行的任务变为 `INTERRUPTED`，必须从不可变输入显式重试，而不是假装恢复未持久化的 CPU 状态。RPC 错误会使批次失败；重试由运营者发起。备份时应停止服务并复制整个数据目录。崩溃后，必须确认没有服务进程仍占用该目录，才能删除 `service.lock`。文件系统持久性和重命名语义必须在实际部署存储上验证。
 
-## Operational limits / release gate
+## 运行限制与发布条件
 
-This is implemented software, not yet a certified production deployment. Before public release:
+软件功能已实现，但尚未完成生产部署认证。公开发布前需要：
 
-- Run npm run verify (no parser required); optionally rebuild/check serial artifacts with the reviewed parser. Full browser regression of the operator UI is still required.
-- Complete live CPU-driven batches and representative 64-order load tests; record duration and RPC limits. A controller request uses approximately 100 sequential RPC calls, with additional multiplier calls per allocation. No completion SLA is established.
-- Validate reverse proxy TLS, secrets handling, process supervision, backup restore, filesystem failure recovery and monitoring on the target host.
-- Review CPU selectors/source provenance independently; returned bytes matching a netlist do not authenticate persistent state.
-- Add stronger distributed rate limiting before internet exposure. The built-in limiter sees the reverse proxy address and is not a multi-user abuse defense.
-- API batch creation accepts an optional `requestId` (16–100 ASCII letters, digits, underscores or hyphens). Reusing it with identical input returns the existing batch; different input is rejected. Clients must retain that key for retries. The current UI does not yet supply it. User account management, full audit logging and cancellation remain unimplemented. Revision checks prevent replayed run commands.
+- 执行 `npm run verify`，无需解析器；可使用经过审阅的解析器重新构建或检查串行电路产物。仍需完成运营界面的完整浏览器回归测试。
+- 完成真实 CPU 驱动的批次及具有代表性的 64 笔订单负载测试，记录耗时和 RPC 限制。一次控制器请求约需 100 次串行 RPC 调用，每项分配还需要额外的乘法器调用。目前没有完成时限服务承诺。
+- 在目标主机验证反向代理 TLS、密钥管理、进程监督、备份恢复、文件系统故障恢复和监控。
+- 独立审查 CPU 函数选择器及源码来源；返回字节与网表一致，并不证明持久化状态的真实性。
+- 面向公网前应增加更强的分布式限流。内置限流看到的是反向代理地址，不能作为多用户防滥用方案。
+- 创建批次 API 支持可选的 `requestId`，长度为 16–100 个 ASCII 字母、数字、下划线或连字符。同一标识配合相同输入会返回已有批次；输入不同则拒绝。客户端必须保存该标识用于重试。当前界面尚未发送它；用户账户管理、完整审计日志和取消功能尚未实现。修订版本检查用于防止重复执行旧版本的运行命令。
 
-The application must not be represented as fully on-chain settlement or as ready to handle real deposits. Allocation fields quotePaid/quoteReceived are computed obligations, never proof that payment occurred.
+不得将本应用描述为完全链上结算系统，或声称其已经可以接收真实存款。分配字段 `quotePaid` 和 `quoteReceived` 表示计算得到的付款义务，不是付款已经发生的证明。
