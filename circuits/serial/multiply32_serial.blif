@@ -1,0 +1,1528 @@
+.model multiply32_serial
+.inputs i0 i1 i2 i3 i4 i5 i6 i7 i8 i9 ia ib ic id ie if ig ih ii ij ik il im in io ip iq ir is it iu iv iw ix iy iz i10 i11 i12 i13 i14 i15 i16 i17 i18 i19 i1a i1b i1c i1d i1e i1f i1g i1h i1i i1j i1k i1l i1m i1n i1o i1p i1q i1r i1s i1t i1u
+.outputs q0 q1 q2 q3 q4 q5 q6 q7 q8 q9 qa qb qc qd qe qf qg qh qi qj qk ql qm qn qo qp qq qr qs qt qu qv qw qx qy qz q10 q11 q12 q13 q14 q15 q16 q17 q18 q19 q1a q1b q1c q1d q1e q1f q1g q1h q1i q1j q1k q1l q1m q1n q1o q1p q1q q1r q1s q1t
+.names z
+.names o
+1
+.latch nca r0 0
+.latch ncb r1 0
+.latch ncc r2 0
+.latch ncd r3 0
+.latch nce r4 0
+.latch ncf r5 0
+.latch ncg r6 0
+.latch nch r7 0
+.latch nci r8 0
+.latch ncj r9 0
+.latch nck ra 0
+.latch ncl rb 0
+.latch ncm rc 0
+.latch ncn rd 0
+.latch nco re 0
+.latch ncp rf 0
+.latch ncq rg 0
+.latch ncr rh 0
+.latch ncs ri 0
+.latch nct rj 0
+.latch ncu rk 0
+.latch ncv rl 0
+.latch ncw rm 0
+.latch ncx rn 0
+.latch ncy ro 0
+.latch ncz rp 0
+.latch nd0 rq 0
+.latch nd1 rr 0
+.latch nd2 rs 0
+.latch nd3 rt 0
+.latch nd4 ru 0
+.latch nd5 rv 0
+.latch nd6 rw 0
+.latch nd7 rx 0
+.latch nd8 ry 0
+.latch nd9 rz 0
+.latch nda r10 0
+.latch ndb r11 0
+.latch ndc r12 0
+.latch ndd r13 0
+.latch nde r14 0
+.latch ndf r15 0
+.latch ndg r16 0
+.latch ndh r17 0
+.latch ndi r18 0
+.latch ndj r19 0
+.latch ndk r1a 0
+.latch ndl r1b 0
+.latch ndm r1c 0
+.latch ndn r1d 0
+.latch ndo r1e 0
+.latch ndp r1f 0
+.latch ndq r1g 0
+.latch ndr r1h 0
+.latch nds r1i 0
+.latch ndt r1j 0
+.latch ndu r1k 0
+.latch ndv r1l 0
+.latch ndw r1m 0
+.latch ndx r1n 0
+.latch ndy r1o 0
+.latch ndz r1p 0
+.latch ne0 r1q 0
+.latch ne1 r1r 0
+.latch ne2 r1s 0
+.latch ne3 r1t 0
+.latch ne4 r1u 0
+.latch ne5 r1v 0
+.latch ne6 r1w 0
+.latch ne7 r1x 0
+.latch ne8 r1y 0
+.latch ne9 r1z 0
+.latch nea r20 0
+.latch neb r21 0
+.latch nec r22 0
+.latch ned r23 0
+.latch nee r24 0
+.latch nef r25 0
+.latch neg r26 0
+.latch neh r27 0
+.latch nei r28 0
+.latch nej r29 0
+.latch nek r2a 0
+.latch nel r2b 0
+.latch nem r2c 0
+.latch nen r2d 0
+.latch neo r2e 0
+.latch nep r2f 0
+.latch neq r2g 0
+.latch ner r2h 0
+.latch nes r2i 0
+.latch net r2j 0
+.latch neu r2k 0
+.latch nev r2l 0
+.latch new r2m 0
+.latch nex r2n 0
+.latch ney r2o 0
+.latch nez r2p 0
+.latch nf0 r2q 0
+.latch nf1 r2r 0
+.latch nf2 r2s 0
+.latch nf3 r2t 0
+.latch nf4 r2u 0
+.latch nf5 r2v 0
+.names r2u n2w
+0 1
+.names i1 n2w n2x
+11 1
+.names r2u i2 n2y
+11 1
+.names r2o o n2z
+01 1
+10 1
+.names r2p o n30
+01 1
+10 1
+.names r2q o n31
+01 1
+10 1
+.names r2r o n32
+01 1
+10 1
+.names r2s o n33
+01 1
+10 1
+.names r2t z n34
+01 1
+10 1
+.names z n2z n35
+1- 1
+-1 1
+.names n35 n30 n36
+1- 1
+-1 1
+.names n36 n31 n37
+1- 1
+-1 1
+.names n37 n32 n38
+1- 1
+-1 1
+.names n38 n33 n39
+1- 1
+-1 1
+.names n39 n34 n3a
+1- 1
+-1 1
+.names n3a n3b
+0 1
+.names n2y n3b n3c
+11 1
+.names r0 rw n3d
+11 1
+.names r1 rw n3e
+11 1
+.names r2 rw n3f
+11 1
+.names r3 rw n3g
+11 1
+.names r4 rw n3h
+11 1
+.names r5 rw n3i
+11 1
+.names r6 rw n3j
+11 1
+.names r7 rw n3k
+11 1
+.names r8 rw n3l
+11 1
+.names r9 rw n3m
+11 1
+.names ra rw n3n
+11 1
+.names rb rw n3o
+11 1
+.names rc rw n3p
+11 1
+.names rd rw n3q
+11 1
+.names re rw n3r
+11 1
+.names rf rw n3s
+11 1
+.names rg rw n3t
+11 1
+.names rh rw n3u
+11 1
+.names ri rw n3v
+11 1
+.names rj rw n3w
+11 1
+.names rk rw n3x
+11 1
+.names rl rw n3y
+11 1
+.names rm rw n3z
+11 1
+.names rn rw n40
+11 1
+.names ro rw n41
+11 1
+.names rp rw n42
+11 1
+.names rq rw n43
+11 1
+.names rr rw n44
+11 1
+.names rs rw n45
+11 1
+.names rt rw n46
+11 1
+.names ru rw n47
+11 1
+.names rv rw n48
+11 1
+.names r1s n3d n49
+01 1
+10 1
+.names n49 z n4a
+01 1
+10 1
+.names n49 z r1s n4b
+11- 1
+0-1 1
+.names r1t n3e n4c
+01 1
+10 1
+.names n4c n4b n4d
+01 1
+10 1
+.names n4c n4b r1t n4e
+11- 1
+0-1 1
+.names r1u n3f n4f
+01 1
+10 1
+.names n4f n4e n4g
+01 1
+10 1
+.names n4f n4e r1u n4h
+11- 1
+0-1 1
+.names r1v n3g n4i
+01 1
+10 1
+.names n4i n4h n4j
+01 1
+10 1
+.names n4i n4h r1v n4k
+11- 1
+0-1 1
+.names r1w n3h n4l
+01 1
+10 1
+.names n4l n4k n4m
+01 1
+10 1
+.names n4l n4k r1w n4n
+11- 1
+0-1 1
+.names r1x n3i n4o
+01 1
+10 1
+.names n4o n4n n4p
+01 1
+10 1
+.names n4o n4n r1x n4q
+11- 1
+0-1 1
+.names r1y n3j n4r
+01 1
+10 1
+.names n4r n4q n4s
+01 1
+10 1
+.names n4r n4q r1y n4t
+11- 1
+0-1 1
+.names r1z n3k n4u
+01 1
+10 1
+.names n4u n4t n4v
+01 1
+10 1
+.names n4u n4t r1z n4w
+11- 1
+0-1 1
+.names r20 n3l n4x
+01 1
+10 1
+.names n4x n4w n4y
+01 1
+10 1
+.names n4x n4w r20 n4z
+11- 1
+0-1 1
+.names r21 n3m n50
+01 1
+10 1
+.names n50 n4z n51
+01 1
+10 1
+.names n50 n4z r21 n52
+11- 1
+0-1 1
+.names r22 n3n n53
+01 1
+10 1
+.names n53 n52 n54
+01 1
+10 1
+.names n53 n52 r22 n55
+11- 1
+0-1 1
+.names r23 n3o n56
+01 1
+10 1
+.names n56 n55 n57
+01 1
+10 1
+.names n56 n55 r23 n58
+11- 1
+0-1 1
+.names r24 n3p n59
+01 1
+10 1
+.names n59 n58 n5a
+01 1
+10 1
+.names n59 n58 r24 n5b
+11- 1
+0-1 1
+.names r25 n3q n5c
+01 1
+10 1
+.names n5c n5b n5d
+01 1
+10 1
+.names n5c n5b r25 n5e
+11- 1
+0-1 1
+.names r26 n3r n5f
+01 1
+10 1
+.names n5f n5e n5g
+01 1
+10 1
+.names n5f n5e r26 n5h
+11- 1
+0-1 1
+.names r27 n3s n5i
+01 1
+10 1
+.names n5i n5h n5j
+01 1
+10 1
+.names n5i n5h r27 n5k
+11- 1
+0-1 1
+.names r28 n3t n5l
+01 1
+10 1
+.names n5l n5k n5m
+01 1
+10 1
+.names n5l n5k r28 n5n
+11- 1
+0-1 1
+.names r29 n3u n5o
+01 1
+10 1
+.names n5o n5n n5p
+01 1
+10 1
+.names n5o n5n r29 n5q
+11- 1
+0-1 1
+.names r2a n3v n5r
+01 1
+10 1
+.names n5r n5q n5s
+01 1
+10 1
+.names n5r n5q r2a n5t
+11- 1
+0-1 1
+.names r2b n3w n5u
+01 1
+10 1
+.names n5u n5t n5v
+01 1
+10 1
+.names n5u n5t r2b n5w
+11- 1
+0-1 1
+.names r2c n3x n5x
+01 1
+10 1
+.names n5x n5w n5y
+01 1
+10 1
+.names n5x n5w r2c n5z
+11- 1
+0-1 1
+.names r2d n3y n60
+01 1
+10 1
+.names n60 n5z n61
+01 1
+10 1
+.names n60 n5z r2d n62
+11- 1
+0-1 1
+.names r2e n3z n63
+01 1
+10 1
+.names n63 n62 n64
+01 1
+10 1
+.names n63 n62 r2e n65
+11- 1
+0-1 1
+.names r2f n40 n66
+01 1
+10 1
+.names n66 n65 n67
+01 1
+10 1
+.names n66 n65 r2f n68
+11- 1
+0-1 1
+.names r2g n41 n69
+01 1
+10 1
+.names n69 n68 n6a
+01 1
+10 1
+.names n69 n68 r2g n6b
+11- 1
+0-1 1
+.names r2h n42 n6c
+01 1
+10 1
+.names n6c n6b n6d
+01 1
+10 1
+.names n6c n6b r2h n6e
+11- 1
+0-1 1
+.names r2i n43 n6f
+01 1
+10 1
+.names n6f n6e n6g
+01 1
+10 1
+.names n6f n6e r2i n6h
+11- 1
+0-1 1
+.names r2j n44 n6i
+01 1
+10 1
+.names n6i n6h n6j
+01 1
+10 1
+.names n6i n6h r2j n6k
+11- 1
+0-1 1
+.names r2k n45 n6l
+01 1
+10 1
+.names n6l n6k n6m
+01 1
+10 1
+.names n6l n6k r2k n6n
+11- 1
+0-1 1
+.names r2l n46 n6o
+01 1
+10 1
+.names n6o n6n n6p
+01 1
+10 1
+.names n6o n6n r2l n6q
+11- 1
+0-1 1
+.names r2m n47 n6r
+01 1
+10 1
+.names n6r n6q n6s
+01 1
+10 1
+.names n6r n6q r2m n6t
+11- 1
+0-1 1
+.names r2n n48 n6u
+01 1
+10 1
+.names n6u n6t n6v
+01 1
+10 1
+.names n6u n6t r2n n6w
+11- 1
+0-1 1
+.names n2x i3 r0 n6x
+11- 1
+0-1 1
+.names n2x i4 r1 n6y
+11- 1
+0-1 1
+.names n2x i5 r2 n6z
+11- 1
+0-1 1
+.names n2x i6 r3 n70
+11- 1
+0-1 1
+.names n2x i7 r4 n71
+11- 1
+0-1 1
+.names n2x i8 r5 n72
+11- 1
+0-1 1
+.names n2x i9 r6 n73
+11- 1
+0-1 1
+.names n2x ia r7 n74
+11- 1
+0-1 1
+.names n2x ib r8 n75
+11- 1
+0-1 1
+.names n2x ic r9 n76
+11- 1
+0-1 1
+.names n2x id ra n77
+11- 1
+0-1 1
+.names n2x ie rb n78
+11- 1
+0-1 1
+.names n2x if rc n79
+11- 1
+0-1 1
+.names n2x ig rd n7a
+11- 1
+0-1 1
+.names n2x ih re n7b
+11- 1
+0-1 1
+.names n2x ii rf n7c
+11- 1
+0-1 1
+.names n2x ij rg n7d
+11- 1
+0-1 1
+.names n2x ik rh n7e
+11- 1
+0-1 1
+.names n2x il ri n7f
+11- 1
+0-1 1
+.names n2x im rj n7g
+11- 1
+0-1 1
+.names n2x in rk n7h
+11- 1
+0-1 1
+.names n2x io rl n7i
+11- 1
+0-1 1
+.names n2x ip rm n7j
+11- 1
+0-1 1
+.names n2x iq rn n7k
+11- 1
+0-1 1
+.names n2x ir ro n7l
+11- 1
+0-1 1
+.names n2x is rp n7m
+11- 1
+0-1 1
+.names n2x it rq n7n
+11- 1
+0-1 1
+.names n2x iu rr n7o
+11- 1
+0-1 1
+.names n2x iv rs n7p
+11- 1
+0-1 1
+.names n2x iw rt n7q
+11- 1
+0-1 1
+.names n2x ix ru n7r
+11- 1
+0-1 1
+.names n2x iy rv n7s
+11- 1
+0-1 1
+.names n2y rx rw n7t
+11- 1
+0-1 1
+.names n2y ry rx n7u
+11- 1
+0-1 1
+.names n2y rz ry n7v
+11- 1
+0-1 1
+.names n2y r10 rz n7w
+11- 1
+0-1 1
+.names n2y r11 r10 n7x
+11- 1
+0-1 1
+.names n2y r12 r11 n7y
+11- 1
+0-1 1
+.names n2y r13 r12 n7z
+11- 1
+0-1 1
+.names n2y r14 r13 n80
+11- 1
+0-1 1
+.names n2y r15 r14 n81
+11- 1
+0-1 1
+.names n2y r16 r15 n82
+11- 1
+0-1 1
+.names n2y r17 r16 n83
+11- 1
+0-1 1
+.names n2y r18 r17 n84
+11- 1
+0-1 1
+.names n2y r19 r18 n85
+11- 1
+0-1 1
+.names n2y r1a r19 n86
+11- 1
+0-1 1
+.names n2y r1b r1a n87
+11- 1
+0-1 1
+.names n2y r1c r1b n88
+11- 1
+0-1 1
+.names n2y r1d r1c n89
+11- 1
+0-1 1
+.names n2y r1e r1d n8a
+11- 1
+0-1 1
+.names n2y r1f r1e n8b
+11- 1
+0-1 1
+.names n2y r1g r1f n8c
+11- 1
+0-1 1
+.names n2y r1h r1g n8d
+11- 1
+0-1 1
+.names n2y r1i r1h n8e
+11- 1
+0-1 1
+.names n2y r1j r1i n8f
+11- 1
+0-1 1
+.names n2y r1k r1j n8g
+11- 1
+0-1 1
+.names n2y r1l r1k n8h
+11- 1
+0-1 1
+.names n2y r1m r1l n8i
+11- 1
+0-1 1
+.names n2y r1n r1m n8j
+11- 1
+0-1 1
+.names n2y r1o r1n n8k
+11- 1
+0-1 1
+.names n2y r1p r1o n8l
+11- 1
+0-1 1
+.names n2y r1q r1p n8m
+11- 1
+0-1 1
+.names n2y r1r r1q n8n
+11- 1
+0-1 1
+.names n2y n4a r1r n8o
+11- 1
+0-1 1
+.names n2y n4d r1s n8p
+11- 1
+0-1 1
+.names n2y n4g r1t n8q
+11- 1
+0-1 1
+.names n2y n4j r1u n8r
+11- 1
+0-1 1
+.names n2y n4m r1v n8s
+11- 1
+0-1 1
+.names n2y n4p r1w n8t
+11- 1
+0-1 1
+.names n2y n4s r1x n8u
+11- 1
+0-1 1
+.names n2y n4v r1y n8v
+11- 1
+0-1 1
+.names n2y n4y r1z n8w
+11- 1
+0-1 1
+.names n2y n51 r20 n8x
+11- 1
+0-1 1
+.names n2y n54 r21 n8y
+11- 1
+0-1 1
+.names n2y n57 r22 n8z
+11- 1
+0-1 1
+.names n2y n5a r23 n90
+11- 1
+0-1 1
+.names n2y n5d r24 n91
+11- 1
+0-1 1
+.names n2y n5g r25 n92
+11- 1
+0-1 1
+.names n2y n5j r26 n93
+11- 1
+0-1 1
+.names n2y n5m r27 n94
+11- 1
+0-1 1
+.names n2y n5p r28 n95
+11- 1
+0-1 1
+.names n2y n5s r29 n96
+11- 1
+0-1 1
+.names n2y n5v r2a n97
+11- 1
+0-1 1
+.names n2y n5y r2b n98
+11- 1
+0-1 1
+.names n2y n61 r2c n99
+11- 1
+0-1 1
+.names n2y n64 r2d n9a
+11- 1
+0-1 1
+.names n2y n67 r2e n9b
+11- 1
+0-1 1
+.names n2y n6a r2f n9c
+11- 1
+0-1 1
+.names n2y n6d r2g n9d
+11- 1
+0-1 1
+.names n2y n6g r2h n9e
+11- 1
+0-1 1
+.names n2y n6j r2i n9f
+11- 1
+0-1 1
+.names n2y n6m r2j n9g
+11- 1
+0-1 1
+.names n2y n6p r2k n9h
+11- 1
+0-1 1
+.names n2y n6s r2l n9i
+11- 1
+0-1 1
+.names n2y n6v r2m n9j
+11- 1
+0-1 1
+.names n2y n6w r2n n9k
+11- 1
+0-1 1
+.names n2x iz n7t n9l
+11- 1
+0-1 1
+.names n2x i10 n7u n9m
+11- 1
+0-1 1
+.names n2x i11 n7v n9n
+11- 1
+0-1 1
+.names n2x i12 n7w n9o
+11- 1
+0-1 1
+.names n2x i13 n7x n9p
+11- 1
+0-1 1
+.names n2x i14 n7y n9q
+11- 1
+0-1 1
+.names n2x i15 n7z n9r
+11- 1
+0-1 1
+.names n2x i16 n80 n9s
+11- 1
+0-1 1
+.names n2x i17 n81 n9t
+11- 1
+0-1 1
+.names n2x i18 n82 n9u
+11- 1
+0-1 1
+.names n2x i19 n83 n9v
+11- 1
+0-1 1
+.names n2x i1a n84 n9w
+11- 1
+0-1 1
+.names n2x i1b n85 n9x
+11- 1
+0-1 1
+.names n2x i1c n86 n9y
+11- 1
+0-1 1
+.names n2x i1d n87 n9z
+11- 1
+0-1 1
+.names n2x i1e n88 na0
+11- 1
+0-1 1
+.names n2x i1f n89 na1
+11- 1
+0-1 1
+.names n2x i1g n8a na2
+11- 1
+0-1 1
+.names n2x i1h n8b na3
+11- 1
+0-1 1
+.names n2x i1i n8c na4
+11- 1
+0-1 1
+.names n2x i1j n8d na5
+11- 1
+0-1 1
+.names n2x i1k n8e na6
+11- 1
+0-1 1
+.names n2x i1l n8f na7
+11- 1
+0-1 1
+.names n2x i1m n8g na8
+11- 1
+0-1 1
+.names n2x i1n n8h na9
+11- 1
+0-1 1
+.names n2x i1o n8i naa
+11- 1
+0-1 1
+.names n2x i1p n8j nab
+11- 1
+0-1 1
+.names n2x i1q n8k nac
+11- 1
+0-1 1
+.names n2x i1r n8l nad
+11- 1
+0-1 1
+.names n2x i1s n8m nae
+11- 1
+0-1 1
+.names n2x i1t n8n naf
+11- 1
+0-1 1
+.names n2x i1u n8o nag
+11- 1
+0-1 1
+.names n2x z n8p nah
+11- 1
+0-1 1
+.names n2x z n8q nai
+11- 1
+0-1 1
+.names n2x z n8r naj
+11- 1
+0-1 1
+.names n2x z n8s nak
+11- 1
+0-1 1
+.names n2x z n8t nal
+11- 1
+0-1 1
+.names n2x z n8u nam
+11- 1
+0-1 1
+.names n2x z n8v nan
+11- 1
+0-1 1
+.names n2x z n8w nao
+11- 1
+0-1 1
+.names n2x z n8x nap
+11- 1
+0-1 1
+.names n2x z n8y naq
+11- 1
+0-1 1
+.names n2x z n8z nar
+11- 1
+0-1 1
+.names n2x z n90 nas
+11- 1
+0-1 1
+.names n2x z n91 nat
+11- 1
+0-1 1
+.names n2x z n92 nau
+11- 1
+0-1 1
+.names n2x z n93 nav
+11- 1
+0-1 1
+.names n2x z n94 naw
+11- 1
+0-1 1
+.names n2x z n95 nax
+11- 1
+0-1 1
+.names n2x z n96 nay
+11- 1
+0-1 1
+.names n2x z n97 naz
+11- 1
+0-1 1
+.names n2x z n98 nb0
+11- 1
+0-1 1
+.names n2x z n99 nb1
+11- 1
+0-1 1
+.names n2x z n9a nb2
+11- 1
+0-1 1
+.names n2x z n9b nb3
+11- 1
+0-1 1
+.names n2x z n9c nb4
+11- 1
+0-1 1
+.names n2x z n9d nb5
+11- 1
+0-1 1
+.names n2x z n9e nb6
+11- 1
+0-1 1
+.names n2x z n9f nb7
+11- 1
+0-1 1
+.names n2x z n9g nb8
+11- 1
+0-1 1
+.names n2x z n9h nb9
+11- 1
+0-1 1
+.names n2x z n9i nba
+11- 1
+0-1 1
+.names n2x z n9j nbb
+11- 1
+0-1 1
+.names n2x z n9k nbc
+11- 1
+0-1 1
+.names n2z z nbd
+01 1
+10 1
+.names n2z z r2o nbe
+11- 1
+0-1 1
+.names r2p z nbf
+01 1
+10 1
+.names nbf nbe nbg
+01 1
+10 1
+.names nbf nbe r2p nbh
+11- 1
+0-1 1
+.names r2q z nbi
+01 1
+10 1
+.names nbi nbh nbj
+01 1
+10 1
+.names nbi nbh r2q nbk
+11- 1
+0-1 1
+.names r2r z nbl
+01 1
+10 1
+.names nbl nbk nbm
+01 1
+10 1
+.names nbl nbk r2r nbn
+11- 1
+0-1 1
+.names r2s z nbo
+01 1
+10 1
+.names nbo nbn nbp
+01 1
+10 1
+.names nbo nbn r2s nbq
+11- 1
+0-1 1
+.names n34 nbq nbr
+01 1
+10 1
+.names n2y nbd r2o nbs
+11- 1
+0-1 1
+.names n2y nbg r2p nbt
+11- 1
+0-1 1
+.names n2y nbj r2q nbu
+11- 1
+0-1 1
+.names n2y nbm r2r nbv
+11- 1
+0-1 1
+.names n2y nbp r2s nbw
+11- 1
+0-1 1
+.names n2y nbr r2t nbx
+11- 1
+0-1 1
+.names n2x z nbs nby
+11- 1
+0-1 1
+.names n2x z nbt nbz
+11- 1
+0-1 1
+.names n2x z nbu nc0
+11- 1
+0-1 1
+.names n2x z nbv nc1
+11- 1
+0-1 1
+.names n2x z nbw nc2
+11- 1
+0-1 1
+.names n2x z nbx nc3
+11- 1
+0-1 1
+.names n3c nc4
+0 1
+.names r2u nc4 nc5
+11 1
+.names n2x nc5 nc6
+1- 1
+-1 1
+.names n2x nc7
+0 1
+.names r2v n3c nc8
+1- 1
+-1 1
+.names nc7 nc8 nc9
+11 1
+.names i0 z n6x nca
+11- 1
+0-1 1
+.names i0 z n6y ncb
+11- 1
+0-1 1
+.names i0 z n6z ncc
+11- 1
+0-1 1
+.names i0 z n70 ncd
+11- 1
+0-1 1
+.names i0 z n71 nce
+11- 1
+0-1 1
+.names i0 z n72 ncf
+11- 1
+0-1 1
+.names i0 z n73 ncg
+11- 1
+0-1 1
+.names i0 z n74 nch
+11- 1
+0-1 1
+.names i0 z n75 nci
+11- 1
+0-1 1
+.names i0 z n76 ncj
+11- 1
+0-1 1
+.names i0 z n77 nck
+11- 1
+0-1 1
+.names i0 z n78 ncl
+11- 1
+0-1 1
+.names i0 z n79 ncm
+11- 1
+0-1 1
+.names i0 z n7a ncn
+11- 1
+0-1 1
+.names i0 z n7b nco
+11- 1
+0-1 1
+.names i0 z n7c ncp
+11- 1
+0-1 1
+.names i0 z n7d ncq
+11- 1
+0-1 1
+.names i0 z n7e ncr
+11- 1
+0-1 1
+.names i0 z n7f ncs
+11- 1
+0-1 1
+.names i0 z n7g nct
+11- 1
+0-1 1
+.names i0 z n7h ncu
+11- 1
+0-1 1
+.names i0 z n7i ncv
+11- 1
+0-1 1
+.names i0 z n7j ncw
+11- 1
+0-1 1
+.names i0 z n7k ncx
+11- 1
+0-1 1
+.names i0 z n7l ncy
+11- 1
+0-1 1
+.names i0 z n7m ncz
+11- 1
+0-1 1
+.names i0 z n7n nd0
+11- 1
+0-1 1
+.names i0 z n7o nd1
+11- 1
+0-1 1
+.names i0 z n7p nd2
+11- 1
+0-1 1
+.names i0 z n7q nd3
+11- 1
+0-1 1
+.names i0 z n7r nd4
+11- 1
+0-1 1
+.names i0 z n7s nd5
+11- 1
+0-1 1
+.names i0 z n9l nd6
+11- 1
+0-1 1
+.names i0 z n9m nd7
+11- 1
+0-1 1
+.names i0 z n9n nd8
+11- 1
+0-1 1
+.names i0 z n9o nd9
+11- 1
+0-1 1
+.names i0 z n9p nda
+11- 1
+0-1 1
+.names i0 z n9q ndb
+11- 1
+0-1 1
+.names i0 z n9r ndc
+11- 1
+0-1 1
+.names i0 z n9s ndd
+11- 1
+0-1 1
+.names i0 z n9t nde
+11- 1
+0-1 1
+.names i0 z n9u ndf
+11- 1
+0-1 1
+.names i0 z n9v ndg
+11- 1
+0-1 1
+.names i0 z n9w ndh
+11- 1
+0-1 1
+.names i0 z n9x ndi
+11- 1
+0-1 1
+.names i0 z n9y ndj
+11- 1
+0-1 1
+.names i0 z n9z ndk
+11- 1
+0-1 1
+.names i0 z na0 ndl
+11- 1
+0-1 1
+.names i0 z na1 ndm
+11- 1
+0-1 1
+.names i0 z na2 ndn
+11- 1
+0-1 1
+.names i0 z na3 ndo
+11- 1
+0-1 1
+.names i0 z na4 ndp
+11- 1
+0-1 1
+.names i0 z na5 ndq
+11- 1
+0-1 1
+.names i0 z na6 ndr
+11- 1
+0-1 1
+.names i0 z na7 nds
+11- 1
+0-1 1
+.names i0 z na8 ndt
+11- 1
+0-1 1
+.names i0 z na9 ndu
+11- 1
+0-1 1
+.names i0 z naa ndv
+11- 1
+0-1 1
+.names i0 z nab ndw
+11- 1
+0-1 1
+.names i0 z nac ndx
+11- 1
+0-1 1
+.names i0 z nad ndy
+11- 1
+0-1 1
+.names i0 z nae ndz
+11- 1
+0-1 1
+.names i0 z naf ne0
+11- 1
+0-1 1
+.names i0 z nag ne1
+11- 1
+0-1 1
+.names i0 z nah ne2
+11- 1
+0-1 1
+.names i0 z nai ne3
+11- 1
+0-1 1
+.names i0 z naj ne4
+11- 1
+0-1 1
+.names i0 z nak ne5
+11- 1
+0-1 1
+.names i0 z nal ne6
+11- 1
+0-1 1
+.names i0 z nam ne7
+11- 1
+0-1 1
+.names i0 z nan ne8
+11- 1
+0-1 1
+.names i0 z nao ne9
+11- 1
+0-1 1
+.names i0 z nap nea
+11- 1
+0-1 1
+.names i0 z naq neb
+11- 1
+0-1 1
+.names i0 z nar nec
+11- 1
+0-1 1
+.names i0 z nas ned
+11- 1
+0-1 1
+.names i0 z nat nee
+11- 1
+0-1 1
+.names i0 z nau nef
+11- 1
+0-1 1
+.names i0 z nav neg
+11- 1
+0-1 1
+.names i0 z naw neh
+11- 1
+0-1 1
+.names i0 z nax nei
+11- 1
+0-1 1
+.names i0 z nay nej
+11- 1
+0-1 1
+.names i0 z naz nek
+11- 1
+0-1 1
+.names i0 z nb0 nel
+11- 1
+0-1 1
+.names i0 z nb1 nem
+11- 1
+0-1 1
+.names i0 z nb2 nen
+11- 1
+0-1 1
+.names i0 z nb3 neo
+11- 1
+0-1 1
+.names i0 z nb4 nep
+11- 1
+0-1 1
+.names i0 z nb5 neq
+11- 1
+0-1 1
+.names i0 z nb6 ner
+11- 1
+0-1 1
+.names i0 z nb7 nes
+11- 1
+0-1 1
+.names i0 z nb8 net
+11- 1
+0-1 1
+.names i0 z nb9 neu
+11- 1
+0-1 1
+.names i0 z nba nev
+11- 1
+0-1 1
+.names i0 z nbb new
+11- 1
+0-1 1
+.names i0 z nbc nex
+11- 1
+0-1 1
+.names i0 z nby ney
+11- 1
+0-1 1
+.names i0 z nbz nez
+11- 1
+0-1 1
+.names i0 z nc0 nf0
+11- 1
+0-1 1
+.names i0 z nc1 nf1
+11- 1
+0-1 1
+.names i0 z nc2 nf2
+11- 1
+0-1 1
+.names i0 z nc3 nf3
+11- 1
+0-1 1
+.names i0 z nc6 nf4
+11- 1
+0-1 1
+.names i0 z nc9 nf5
+11- 1
+0-1 1
+.names nd6 q0
+1 1
+.names nd7 q1
+1 1
+.names nd8 q2
+1 1
+.names nd9 q3
+1 1
+.names nda q4
+1 1
+.names ndb q5
+1 1
+.names ndc q6
+1 1
+.names ndd q7
+1 1
+.names nde q8
+1 1
+.names ndf q9
+1 1
+.names ndg qa
+1 1
+.names ndh qb
+1 1
+.names ndi qc
+1 1
+.names ndj qd
+1 1
+.names ndk qe
+1 1
+.names ndl qf
+1 1
+.names ndm qg
+1 1
+.names ndn qh
+1 1
+.names ndo qi
+1 1
+.names ndp qj
+1 1
+.names ndq qk
+1 1
+.names ndr ql
+1 1
+.names nds qm
+1 1
+.names ndt qn
+1 1
+.names ndu qo
+1 1
+.names ndv qp
+1 1
+.names ndw qq
+1 1
+.names ndx qr
+1 1
+.names ndy qs
+1 1
+.names ndz qt
+1 1
+.names ne0 qu
+1 1
+.names ne1 qv
+1 1
+.names ne2 qw
+1 1
+.names ne3 qx
+1 1
+.names ne4 qy
+1 1
+.names ne5 qz
+1 1
+.names ne6 q10
+1 1
+.names ne7 q11
+1 1
+.names ne8 q12
+1 1
+.names ne9 q13
+1 1
+.names nea q14
+1 1
+.names neb q15
+1 1
+.names nec q16
+1 1
+.names ned q17
+1 1
+.names nee q18
+1 1
+.names nef q19
+1 1
+.names neg q1a
+1 1
+.names neh q1b
+1 1
+.names nei q1c
+1 1
+.names nej q1d
+1 1
+.names nek q1e
+1 1
+.names nel q1f
+1 1
+.names nem q1g
+1 1
+.names nen q1h
+1 1
+.names neo q1i
+1 1
+.names nep q1j
+1 1
+.names neq q1k
+1 1
+.names ner q1l
+1 1
+.names nes q1m
+1 1
+.names net q1n
+1 1
+.names neu q1o
+1 1
+.names nev q1p
+1 1
+.names new q1q
+1 1
+.names nex q1r
+1 1
+.names nf4 q1s
+1 1
+.names nf5 q1t
+1 1
+.end

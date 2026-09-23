@@ -1,0 +1,1485 @@
+.model quantity_min32
+.inputs a_0 a_1 a_2 a_3 a_4 a_5 a_6 a_7 a_8 a_9 a_10 a_11 a_12 a_13 a_14 a_15 a_16 a_17 a_18 a_19 a_20 a_21 a_22 a_23 a_24 a_25 a_26 a_27 a_28 a_29 a_30 a_31 b_0 b_1 b_2 b_3 b_4 b_5 b_6 b_7 b_8 b_9 b_10 b_11 b_12 b_13 b_14 b_15 b_16 b_17 b_18 b_19 b_20 b_21 b_22 b_23 b_24 b_25 b_26 b_27 b_28 b_29 b_30 b_31
+.outputs valid_0 value_0 value_1 value_2 value_3 value_4 value_5 value_6 value_7 value_8 value_9 value_10 value_11 value_12 value_13 value_14 value_15 value_16 value_17 value_18 value_19 value_20 value_21 value_22 value_23 value_24 value_25 value_26 value_27 value_28 value_29 value_30 value_31
+.names z
+.names o
+1
+.names a_0 n1u
+0 1
+.names o n1u n1v
+11 0
+.names n1v n1w
+0 1
+.names a_1 n1x
+0 1
+.names n1w n1x n1y
+11 0
+.names n1y n1z
+0 1
+.names a_2 n20
+0 1
+.names n1z n20 n21
+11 0
+.names n21 n22
+0 1
+.names a_3 n23
+0 1
+.names n22 n23 n24
+11 0
+.names n24 n25
+0 1
+.names a_4 n26
+0 1
+.names n25 n26 n27
+11 0
+.names n27 n28
+0 1
+.names a_5 n29
+0 1
+.names n28 n29 n2a
+11 0
+.names n2a n2b
+0 1
+.names a_6 n2c
+0 1
+.names n2b n2c n2d
+11 0
+.names n2d n2e
+0 1
+.names a_7 n2f
+0 1
+.names n2e n2f n2g
+11 0
+.names n2g n2h
+0 1
+.names a_8 n2i
+0 1
+.names n2h n2i n2j
+11 0
+.names n2j n2k
+0 1
+.names a_9 n2l
+0 1
+.names n2k n2l n2m
+11 0
+.names n2m n2n
+0 1
+.names a_10 n2o
+0 1
+.names n2n n2o n2p
+11 0
+.names n2p n2q
+0 1
+.names a_11 n2r
+0 1
+.names n2q n2r n2s
+11 0
+.names n2s n2t
+0 1
+.names a_12 n2u
+0 1
+.names n2t n2u n2v
+11 0
+.names n2v n2w
+0 1
+.names a_13 n2x
+0 1
+.names n2w n2x n2y
+11 0
+.names n2y n2z
+0 1
+.names a_14 n30
+0 1
+.names n2z n30 n31
+11 0
+.names n31 n32
+0 1
+.names a_15 n33
+0 1
+.names n32 n33 n34
+11 0
+.names n34 n35
+0 1
+.names a_16 n36
+0 1
+.names n35 n36 n37
+11 0
+.names n37 n38
+0 1
+.names a_17 n39
+0 1
+.names n38 n39 n3a
+11 0
+.names n3a n3b
+0 1
+.names a_18 n3c
+0 1
+.names n3b n3c n3d
+11 0
+.names n3d n3e
+0 1
+.names a_19 n3f
+0 1
+.names n3e n3f n3g
+11 0
+.names n3g n3h
+0 1
+.names a_20 n3i
+0 1
+.names n3h n3i n3j
+11 0
+.names n3j n3k
+0 1
+.names a_21 n3l
+0 1
+.names n3k n3l n3m
+11 0
+.names n3m n3n
+0 1
+.names a_22 n3o
+0 1
+.names n3n n3o n3p
+11 0
+.names n3p n3q
+0 1
+.names a_23 n3r
+0 1
+.names n3q n3r n3s
+11 0
+.names n3s n3t
+0 1
+.names a_24 n3u
+0 1
+.names n3t n3u n3v
+11 0
+.names n3v n3w
+0 1
+.names a_25 n3x
+0 1
+.names n3w n3x n3y
+11 0
+.names n3y n3z
+0 1
+.names a_26 n40
+0 1
+.names n3z n40 n41
+11 0
+.names n41 n42
+0 1
+.names a_27 n43
+0 1
+.names n42 n43 n44
+11 0
+.names n44 n45
+0 1
+.names a_28 n46
+0 1
+.names n45 n46 n47
+11 0
+.names n47 n48
+0 1
+.names a_29 n49
+0 1
+.names n48 n49 n4a
+11 0
+.names n4a n4b
+0 1
+.names a_30 n4c
+0 1
+.names n4b n4c n4d
+11 0
+.names n4d n4e
+0 1
+.names a_31 n4f
+0 1
+.names n4e n4f n4g
+11 0
+.names b_0 n4h
+0 1
+.names o n4h n4i
+11 0
+.names n4i n4j
+0 1
+.names b_1 n4k
+0 1
+.names n4j n4k n4l
+11 0
+.names n4l n4m
+0 1
+.names b_2 n4n
+0 1
+.names n4m n4n n4o
+11 0
+.names n4o n4p
+0 1
+.names b_3 n4q
+0 1
+.names n4p n4q n4r
+11 0
+.names n4r n4s
+0 1
+.names b_4 n4t
+0 1
+.names n4s n4t n4u
+11 0
+.names n4u n4v
+0 1
+.names b_5 n4w
+0 1
+.names n4v n4w n4x
+11 0
+.names n4x n4y
+0 1
+.names b_6 n4z
+0 1
+.names n4y n4z n50
+11 0
+.names n50 n51
+0 1
+.names b_7 n52
+0 1
+.names n51 n52 n53
+11 0
+.names n53 n54
+0 1
+.names b_8 n55
+0 1
+.names n54 n55 n56
+11 0
+.names n56 n57
+0 1
+.names b_9 n58
+0 1
+.names n57 n58 n59
+11 0
+.names n59 n5a
+0 1
+.names b_10 n5b
+0 1
+.names n5a n5b n5c
+11 0
+.names n5c n5d
+0 1
+.names b_11 n5e
+0 1
+.names n5d n5e n5f
+11 0
+.names n5f n5g
+0 1
+.names b_12 n5h
+0 1
+.names n5g n5h n5i
+11 0
+.names n5i n5j
+0 1
+.names b_13 n5k
+0 1
+.names n5j n5k n5l
+11 0
+.names n5l n5m
+0 1
+.names b_14 n5n
+0 1
+.names n5m n5n n5o
+11 0
+.names n5o n5p
+0 1
+.names b_15 n5q
+0 1
+.names n5p n5q n5r
+11 0
+.names n5r n5s
+0 1
+.names b_16 n5t
+0 1
+.names n5s n5t n5u
+11 0
+.names n5u n5v
+0 1
+.names b_17 n5w
+0 1
+.names n5v n5w n5x
+11 0
+.names n5x n5y
+0 1
+.names b_18 n5z
+0 1
+.names n5y n5z n60
+11 0
+.names n60 n61
+0 1
+.names b_19 n62
+0 1
+.names n61 n62 n63
+11 0
+.names n63 n64
+0 1
+.names b_20 n65
+0 1
+.names n64 n65 n66
+11 0
+.names n66 n67
+0 1
+.names b_21 n68
+0 1
+.names n67 n68 n69
+11 0
+.names n69 n6a
+0 1
+.names b_22 n6b
+0 1
+.names n6a n6b n6c
+11 0
+.names n6c n6d
+0 1
+.names b_23 n6e
+0 1
+.names n6d n6e n6f
+11 0
+.names n6f n6g
+0 1
+.names b_24 n6h
+0 1
+.names n6g n6h n6i
+11 0
+.names n6i n6j
+0 1
+.names b_25 n6k
+0 1
+.names n6j n6k n6l
+11 0
+.names n6l n6m
+0 1
+.names b_26 n6n
+0 1
+.names n6m n6n n6o
+11 0
+.names n6o n6p
+0 1
+.names b_27 n6q
+0 1
+.names n6p n6q n6r
+11 0
+.names n6r n6s
+0 1
+.names b_28 n6t
+0 1
+.names n6s n6t n6u
+11 0
+.names n6u n6v
+0 1
+.names b_29 n6w
+0 1
+.names n6v n6w n6x
+11 0
+.names n6x n6y
+0 1
+.names b_30 n6z
+0 1
+.names n6y n6z n70
+11 0
+.names n70 n71
+0 1
+.names b_31 n72
+0 1
+.names n71 n72 n73
+11 0
+.names n4g n73 n74
+11 0
+.names n74 n75
+0 1
+.names a_0 n4h n76
+11 0
+.names a_0 n76 n77
+11 0
+.names n4h n76 n78
+11 0
+.names n77 n78 n79
+11 0
+.names n79 o n7a
+11 0
+.names n79 n7a n7b
+11 0
+.names o n7a n7c
+11 0
+.names n7b n7c n7d
+11 0
+.names n76 n7e
+0 1
+.names n7a n7f
+0 1
+.names n7e n7g
+0 1
+.names n7f n7h
+0 1
+.names n7g n7h n7i
+11 0
+.names a_1 n4k n7j
+11 0
+.names a_1 n7j n7k
+11 0
+.names n4k n7j n7l
+11 0
+.names n7k n7l n7m
+11 0
+.names n7m n7i n7n
+11 0
+.names n7m n7n n7o
+11 0
+.names n7i n7n n7p
+11 0
+.names n7o n7p n7q
+11 0
+.names n7j n7r
+0 1
+.names n7n n7s
+0 1
+.names n7r n7t
+0 1
+.names n7s n7u
+0 1
+.names n7t n7u n7v
+11 0
+.names a_2 n4n n7w
+11 0
+.names a_2 n7w n7x
+11 0
+.names n4n n7w n7y
+11 0
+.names n7x n7y n7z
+11 0
+.names n7z n7v n80
+11 0
+.names n7z n80 n81
+11 0
+.names n7v n80 n82
+11 0
+.names n81 n82 n83
+11 0
+.names n7w n84
+0 1
+.names n80 n85
+0 1
+.names n84 n86
+0 1
+.names n85 n87
+0 1
+.names n86 n87 n88
+11 0
+.names a_3 n4q n89
+11 0
+.names a_3 n89 n8a
+11 0
+.names n4q n89 n8b
+11 0
+.names n8a n8b n8c
+11 0
+.names n8c n88 n8d
+11 0
+.names n8c n8d n8e
+11 0
+.names n88 n8d n8f
+11 0
+.names n8e n8f n8g
+11 0
+.names n89 n8h
+0 1
+.names n8d n8i
+0 1
+.names n8h n8j
+0 1
+.names n8i n8k
+0 1
+.names n8j n8k n8l
+11 0
+.names a_4 n4t n8m
+11 0
+.names a_4 n8m n8n
+11 0
+.names n4t n8m n8o
+11 0
+.names n8n n8o n8p
+11 0
+.names n8p n8l n8q
+11 0
+.names n8p n8q n8r
+11 0
+.names n8l n8q n8s
+11 0
+.names n8r n8s n8t
+11 0
+.names n8m n8u
+0 1
+.names n8q n8v
+0 1
+.names n8u n8w
+0 1
+.names n8v n8x
+0 1
+.names n8w n8x n8y
+11 0
+.names a_5 n4w n8z
+11 0
+.names a_5 n8z n90
+11 0
+.names n4w n8z n91
+11 0
+.names n90 n91 n92
+11 0
+.names n92 n8y n93
+11 0
+.names n92 n93 n94
+11 0
+.names n8y n93 n95
+11 0
+.names n94 n95 n96
+11 0
+.names n8z n97
+0 1
+.names n93 n98
+0 1
+.names n97 n99
+0 1
+.names n98 n9a
+0 1
+.names n99 n9a n9b
+11 0
+.names a_6 n4z n9c
+11 0
+.names a_6 n9c n9d
+11 0
+.names n4z n9c n9e
+11 0
+.names n9d n9e n9f
+11 0
+.names n9f n9b n9g
+11 0
+.names n9f n9g n9h
+11 0
+.names n9b n9g n9i
+11 0
+.names n9h n9i n9j
+11 0
+.names n9c n9k
+0 1
+.names n9g n9l
+0 1
+.names n9k n9m
+0 1
+.names n9l n9n
+0 1
+.names n9m n9n n9o
+11 0
+.names a_7 n52 n9p
+11 0
+.names a_7 n9p n9q
+11 0
+.names n52 n9p n9r
+11 0
+.names n9q n9r n9s
+11 0
+.names n9s n9o n9t
+11 0
+.names n9s n9t n9u
+11 0
+.names n9o n9t n9v
+11 0
+.names n9u n9v n9w
+11 0
+.names n9p n9x
+0 1
+.names n9t n9y
+0 1
+.names n9x n9z
+0 1
+.names n9y na0
+0 1
+.names n9z na0 na1
+11 0
+.names a_8 n55 na2
+11 0
+.names a_8 na2 na3
+11 0
+.names n55 na2 na4
+11 0
+.names na3 na4 na5
+11 0
+.names na5 na1 na6
+11 0
+.names na5 na6 na7
+11 0
+.names na1 na6 na8
+11 0
+.names na7 na8 na9
+11 0
+.names na2 naa
+0 1
+.names na6 nab
+0 1
+.names naa nac
+0 1
+.names nab nad
+0 1
+.names nac nad nae
+11 0
+.names a_9 n58 naf
+11 0
+.names a_9 naf nag
+11 0
+.names n58 naf nah
+11 0
+.names nag nah nai
+11 0
+.names nai nae naj
+11 0
+.names nai naj nak
+11 0
+.names nae naj nal
+11 0
+.names nak nal nam
+11 0
+.names naf nan
+0 1
+.names naj nao
+0 1
+.names nan nap
+0 1
+.names nao naq
+0 1
+.names nap naq nar
+11 0
+.names a_10 n5b nas
+11 0
+.names a_10 nas nat
+11 0
+.names n5b nas nau
+11 0
+.names nat nau nav
+11 0
+.names nav nar naw
+11 0
+.names nav naw nax
+11 0
+.names nar naw nay
+11 0
+.names nax nay naz
+11 0
+.names nas nb0
+0 1
+.names naw nb1
+0 1
+.names nb0 nb2
+0 1
+.names nb1 nb3
+0 1
+.names nb2 nb3 nb4
+11 0
+.names a_11 n5e nb5
+11 0
+.names a_11 nb5 nb6
+11 0
+.names n5e nb5 nb7
+11 0
+.names nb6 nb7 nb8
+11 0
+.names nb8 nb4 nb9
+11 0
+.names nb8 nb9 nba
+11 0
+.names nb4 nb9 nbb
+11 0
+.names nba nbb nbc
+11 0
+.names nb5 nbd
+0 1
+.names nb9 nbe
+0 1
+.names nbd nbf
+0 1
+.names nbe nbg
+0 1
+.names nbf nbg nbh
+11 0
+.names a_12 n5h nbi
+11 0
+.names a_12 nbi nbj
+11 0
+.names n5h nbi nbk
+11 0
+.names nbj nbk nbl
+11 0
+.names nbl nbh nbm
+11 0
+.names nbl nbm nbn
+11 0
+.names nbh nbm nbo
+11 0
+.names nbn nbo nbp
+11 0
+.names nbi nbq
+0 1
+.names nbm nbr
+0 1
+.names nbq nbs
+0 1
+.names nbr nbt
+0 1
+.names nbs nbt nbu
+11 0
+.names a_13 n5k nbv
+11 0
+.names a_13 nbv nbw
+11 0
+.names n5k nbv nbx
+11 0
+.names nbw nbx nby
+11 0
+.names nby nbu nbz
+11 0
+.names nby nbz nc0
+11 0
+.names nbu nbz nc1
+11 0
+.names nc0 nc1 nc2
+11 0
+.names nbv nc3
+0 1
+.names nbz nc4
+0 1
+.names nc3 nc5
+0 1
+.names nc4 nc6
+0 1
+.names nc5 nc6 nc7
+11 0
+.names a_14 n5n nc8
+11 0
+.names a_14 nc8 nc9
+11 0
+.names n5n nc8 nca
+11 0
+.names nc9 nca ncb
+11 0
+.names ncb nc7 ncc
+11 0
+.names ncb ncc ncd
+11 0
+.names nc7 ncc nce
+11 0
+.names ncd nce ncf
+11 0
+.names nc8 ncg
+0 1
+.names ncc nch
+0 1
+.names ncg nci
+0 1
+.names nch ncj
+0 1
+.names nci ncj nck
+11 0
+.names a_15 n5q ncl
+11 0
+.names a_15 ncl ncm
+11 0
+.names n5q ncl ncn
+11 0
+.names ncm ncn nco
+11 0
+.names nco nck ncp
+11 0
+.names nco ncp ncq
+11 0
+.names nck ncp ncr
+11 0
+.names ncq ncr ncs
+11 0
+.names ncl nct
+0 1
+.names ncp ncu
+0 1
+.names nct ncv
+0 1
+.names ncu ncw
+0 1
+.names ncv ncw ncx
+11 0
+.names a_16 n5t ncy
+11 0
+.names a_16 ncy ncz
+11 0
+.names n5t ncy nd0
+11 0
+.names ncz nd0 nd1
+11 0
+.names nd1 ncx nd2
+11 0
+.names nd1 nd2 nd3
+11 0
+.names ncx nd2 nd4
+11 0
+.names nd3 nd4 nd5
+11 0
+.names ncy nd6
+0 1
+.names nd2 nd7
+0 1
+.names nd6 nd8
+0 1
+.names nd7 nd9
+0 1
+.names nd8 nd9 nda
+11 0
+.names a_17 n5w ndb
+11 0
+.names a_17 ndb ndc
+11 0
+.names n5w ndb ndd
+11 0
+.names ndc ndd nde
+11 0
+.names nde nda ndf
+11 0
+.names nde ndf ndg
+11 0
+.names nda ndf ndh
+11 0
+.names ndg ndh ndi
+11 0
+.names ndb ndj
+0 1
+.names ndf ndk
+0 1
+.names ndj ndl
+0 1
+.names ndk ndm
+0 1
+.names ndl ndm ndn
+11 0
+.names a_18 n5z ndo
+11 0
+.names a_18 ndo ndp
+11 0
+.names n5z ndo ndq
+11 0
+.names ndp ndq ndr
+11 0
+.names ndr ndn nds
+11 0
+.names ndr nds ndt
+11 0
+.names ndn nds ndu
+11 0
+.names ndt ndu ndv
+11 0
+.names ndo ndw
+0 1
+.names nds ndx
+0 1
+.names ndw ndy
+0 1
+.names ndx ndz
+0 1
+.names ndy ndz ne0
+11 0
+.names a_19 n62 ne1
+11 0
+.names a_19 ne1 ne2
+11 0
+.names n62 ne1 ne3
+11 0
+.names ne2 ne3 ne4
+11 0
+.names ne4 ne0 ne5
+11 0
+.names ne4 ne5 ne6
+11 0
+.names ne0 ne5 ne7
+11 0
+.names ne6 ne7 ne8
+11 0
+.names ne1 ne9
+0 1
+.names ne5 nea
+0 1
+.names ne9 neb
+0 1
+.names nea nec
+0 1
+.names neb nec ned
+11 0
+.names a_20 n65 nee
+11 0
+.names a_20 nee nef
+11 0
+.names n65 nee neg
+11 0
+.names nef neg neh
+11 0
+.names neh ned nei
+11 0
+.names neh nei nej
+11 0
+.names ned nei nek
+11 0
+.names nej nek nel
+11 0
+.names nee nem
+0 1
+.names nei nen
+0 1
+.names nem neo
+0 1
+.names nen nep
+0 1
+.names neo nep neq
+11 0
+.names a_21 n68 ner
+11 0
+.names a_21 ner nes
+11 0
+.names n68 ner net
+11 0
+.names nes net neu
+11 0
+.names neu neq nev
+11 0
+.names neu nev new
+11 0
+.names neq nev nex
+11 0
+.names new nex ney
+11 0
+.names ner nez
+0 1
+.names nev nf0
+0 1
+.names nez nf1
+0 1
+.names nf0 nf2
+0 1
+.names nf1 nf2 nf3
+11 0
+.names a_22 n6b nf4
+11 0
+.names a_22 nf4 nf5
+11 0
+.names n6b nf4 nf6
+11 0
+.names nf5 nf6 nf7
+11 0
+.names nf7 nf3 nf8
+11 0
+.names nf7 nf8 nf9
+11 0
+.names nf3 nf8 nfa
+11 0
+.names nf9 nfa nfb
+11 0
+.names nf4 nfc
+0 1
+.names nf8 nfd
+0 1
+.names nfc nfe
+0 1
+.names nfd nff
+0 1
+.names nfe nff nfg
+11 0
+.names a_23 n6e nfh
+11 0
+.names a_23 nfh nfi
+11 0
+.names n6e nfh nfj
+11 0
+.names nfi nfj nfk
+11 0
+.names nfk nfg nfl
+11 0
+.names nfk nfl nfm
+11 0
+.names nfg nfl nfn
+11 0
+.names nfm nfn nfo
+11 0
+.names nfh nfp
+0 1
+.names nfl nfq
+0 1
+.names nfp nfr
+0 1
+.names nfq nfs
+0 1
+.names nfr nfs nft
+11 0
+.names a_24 n6h nfu
+11 0
+.names a_24 nfu nfv
+11 0
+.names n6h nfu nfw
+11 0
+.names nfv nfw nfx
+11 0
+.names nfx nft nfy
+11 0
+.names nfx nfy nfz
+11 0
+.names nft nfy ng0
+11 0
+.names nfz ng0 ng1
+11 0
+.names nfu ng2
+0 1
+.names nfy ng3
+0 1
+.names ng2 ng4
+0 1
+.names ng3 ng5
+0 1
+.names ng4 ng5 ng6
+11 0
+.names a_25 n6k ng7
+11 0
+.names a_25 ng7 ng8
+11 0
+.names n6k ng7 ng9
+11 0
+.names ng8 ng9 nga
+11 0
+.names nga ng6 ngb
+11 0
+.names nga ngb ngc
+11 0
+.names ng6 ngb ngd
+11 0
+.names ngc ngd nge
+11 0
+.names ng7 ngf
+0 1
+.names ngb ngg
+0 1
+.names ngf ngh
+0 1
+.names ngg ngi
+0 1
+.names ngh ngi ngj
+11 0
+.names a_26 n6n ngk
+11 0
+.names a_26 ngk ngl
+11 0
+.names n6n ngk ngm
+11 0
+.names ngl ngm ngn
+11 0
+.names ngn ngj ngo
+11 0
+.names ngn ngo ngp
+11 0
+.names ngj ngo ngq
+11 0
+.names ngp ngq ngr
+11 0
+.names ngk ngs
+0 1
+.names ngo ngt
+0 1
+.names ngs ngu
+0 1
+.names ngt ngv
+0 1
+.names ngu ngv ngw
+11 0
+.names a_27 n6q ngx
+11 0
+.names a_27 ngx ngy
+11 0
+.names n6q ngx ngz
+11 0
+.names ngy ngz nh0
+11 0
+.names nh0 ngw nh1
+11 0
+.names nh0 nh1 nh2
+11 0
+.names ngw nh1 nh3
+11 0
+.names nh2 nh3 nh4
+11 0
+.names ngx nh5
+0 1
+.names nh1 nh6
+0 1
+.names nh5 nh7
+0 1
+.names nh6 nh8
+0 1
+.names nh7 nh8 nh9
+11 0
+.names a_28 n6t nha
+11 0
+.names a_28 nha nhb
+11 0
+.names n6t nha nhc
+11 0
+.names nhb nhc nhd
+11 0
+.names nhd nh9 nhe
+11 0
+.names nhd nhe nhf
+11 0
+.names nh9 nhe nhg
+11 0
+.names nhf nhg nhh
+11 0
+.names nha nhi
+0 1
+.names nhe nhj
+0 1
+.names nhi nhk
+0 1
+.names nhj nhl
+0 1
+.names nhk nhl nhm
+11 0
+.names a_29 n6w nhn
+11 0
+.names a_29 nhn nho
+11 0
+.names n6w nhn nhp
+11 0
+.names nho nhp nhq
+11 0
+.names nhq nhm nhr
+11 0
+.names nhq nhr nhs
+11 0
+.names nhm nhr nht
+11 0
+.names nhs nht nhu
+11 0
+.names nhn nhv
+0 1
+.names nhr nhw
+0 1
+.names nhv nhx
+0 1
+.names nhw nhy
+0 1
+.names nhx nhy nhz
+11 0
+.names a_30 n6z ni0
+11 0
+.names a_30 ni0 ni1
+11 0
+.names n6z ni0 ni2
+11 0
+.names ni1 ni2 ni3
+11 0
+.names ni3 nhz ni4
+11 0
+.names ni3 ni4 ni5
+11 0
+.names nhz ni4 ni6
+11 0
+.names ni5 ni6 ni7
+11 0
+.names ni0 ni8
+0 1
+.names ni4 ni9
+0 1
+.names ni8 nia
+0 1
+.names ni9 nib
+0 1
+.names nia nib nic
+11 0
+.names a_31 n72 nid
+11 0
+.names a_31 nid nie
+11 0
+.names n72 nid nif
+11 0
+.names nie nif nig
+11 0
+.names nig nic nih
+11 0
+.names nig nih nii
+11 0
+.names nic nih nij
+11 0
+.names nii nij nik
+11 0
+.names nid nil
+0 1
+.names nih nim
+0 1
+.names nil nin
+0 1
+.names nim nio
+0 1
+.names nin nio nip
+11 0
+.names nip niq
+0 1
+.names niq a_0 nir
+11 0
+.names niq nis
+0 1
+.names nis b_0 nit
+11 0
+.names nir nit niu
+11 0
+.names niq a_1 niv
+11 0
+.names nis b_1 niw
+11 0
+.names niv niw nix
+11 0
+.names niq a_2 niy
+11 0
+.names nis b_2 niz
+11 0
+.names niy niz nj0
+11 0
+.names niq a_3 nj1
+11 0
+.names nis b_3 nj2
+11 0
+.names nj1 nj2 nj3
+11 0
+.names niq a_4 nj4
+11 0
+.names nis b_4 nj5
+11 0
+.names nj4 nj5 nj6
+11 0
+.names niq a_5 nj7
+11 0
+.names nis b_5 nj8
+11 0
+.names nj7 nj8 nj9
+11 0
+.names niq a_6 nja
+11 0
+.names nis b_6 njb
+11 0
+.names nja njb njc
+11 0
+.names niq a_7 njd
+11 0
+.names nis b_7 nje
+11 0
+.names njd nje njf
+11 0
+.names niq a_8 njg
+11 0
+.names nis b_8 njh
+11 0
+.names njg njh nji
+11 0
+.names niq a_9 njj
+11 0
+.names nis b_9 njk
+11 0
+.names njj njk njl
+11 0
+.names niq a_10 njm
+11 0
+.names nis b_10 njn
+11 0
+.names njm njn njo
+11 0
+.names niq a_11 njp
+11 0
+.names nis b_11 njq
+11 0
+.names njp njq njr
+11 0
+.names niq a_12 njs
+11 0
+.names nis b_12 njt
+11 0
+.names njs njt nju
+11 0
+.names niq a_13 njv
+11 0
+.names nis b_13 njw
+11 0
+.names njv njw njx
+11 0
+.names niq a_14 njy
+11 0
+.names nis b_14 njz
+11 0
+.names njy njz nk0
+11 0
+.names niq a_15 nk1
+11 0
+.names nis b_15 nk2
+11 0
+.names nk1 nk2 nk3
+11 0
+.names niq a_16 nk4
+11 0
+.names nis b_16 nk5
+11 0
+.names nk4 nk5 nk6
+11 0
+.names niq a_17 nk7
+11 0
+.names nis b_17 nk8
+11 0
+.names nk7 nk8 nk9
+11 0
+.names niq a_18 nka
+11 0
+.names nis b_18 nkb
+11 0
+.names nka nkb nkc
+11 0
+.names niq a_19 nkd
+11 0
+.names nis b_19 nke
+11 0
+.names nkd nke nkf
+11 0
+.names niq a_20 nkg
+11 0
+.names nis b_20 nkh
+11 0
+.names nkg nkh nki
+11 0
+.names niq a_21 nkj
+11 0
+.names nis b_21 nkk
+11 0
+.names nkj nkk nkl
+11 0
+.names niq a_22 nkm
+11 0
+.names nis b_22 nkn
+11 0
+.names nkm nkn nko
+11 0
+.names niq a_23 nkp
+11 0
+.names nis b_23 nkq
+11 0
+.names nkp nkq nkr
+11 0
+.names niq a_24 nks
+11 0
+.names nis b_24 nkt
+11 0
+.names nks nkt nku
+11 0
+.names niq a_25 nkv
+11 0
+.names nis b_25 nkw
+11 0
+.names nkv nkw nkx
+11 0
+.names niq a_26 nky
+11 0
+.names nis b_26 nkz
+11 0
+.names nky nkz nl0
+11 0
+.names niq a_27 nl1
+11 0
+.names nis b_27 nl2
+11 0
+.names nl1 nl2 nl3
+11 0
+.names niq a_28 nl4
+11 0
+.names nis b_28 nl5
+11 0
+.names nl4 nl5 nl6
+11 0
+.names niq a_29 nl7
+11 0
+.names nis b_29 nl8
+11 0
+.names nl7 nl8 nl9
+11 0
+.names niq a_30 nla
+11 0
+.names nis b_30 nlb
+11 0
+.names nla nlb nlc
+11 0
+.names niq a_31 nld
+11 0
+.names nis b_31 nle
+11 0
+.names nld nle nlf
+11 0
+.names n75 valid_0
+1 1
+.names niu value_0
+1 1
+.names nix value_1
+1 1
+.names nj0 value_2
+1 1
+.names nj3 value_3
+1 1
+.names nj6 value_4
+1 1
+.names nj9 value_5
+1 1
+.names njc value_6
+1 1
+.names njf value_7
+1 1
+.names nji value_8
+1 1
+.names njl value_9
+1 1
+.names njo value_10
+1 1
+.names njr value_11
+1 1
+.names nju value_12
+1 1
+.names njx value_13
+1 1
+.names nk0 value_14
+1 1
+.names nk3 value_15
+1 1
+.names nk6 value_16
+1 1
+.names nk9 value_17
+1 1
+.names nkc value_18
+1 1
+.names nkf value_19
+1 1
+.names nki value_20
+1 1
+.names nkl value_21
+1 1
+.names nko value_22
+1 1
+.names nkr value_23
+1 1
+.names nku value_24
+1 1
+.names nkx value_25
+1 1
+.names nl0 value_26
+1 1
+.names nl3 value_27
+1 1
+.names nl6 value_28
+1 1
+.names nl9 value_29
+1 1
+.names nlc value_30
+1 1
+.names nlf value_31
+1 1
+.end
