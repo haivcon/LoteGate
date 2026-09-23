@@ -1,0 +1,2912 @@
+.model auction_controller_serial
+.inputs in0 in1 in2 in3 in4 in5 in6 in7 in8 in9 ina inb inc ind ine inf ing inh ini inj ink inl inm inn ino inp inq inr ins int inu inv inw inx iny inz in10 in11 in12 in13 in14 in15 in16 in17 in18 in19 in1a in1b in1c in1d in1e in1f in1g in1h in1i in1j in1k in1l in1m in1n in1o in1p in1q in1r in1s in1t in1u in1v in1w in1x in1y in1z in20 in21 in22 in23 in24 in25 in26 in27 in28 in29 in2a in2b in2c in2d in2e in2f in2g in2h in2i in2j in2k in2l in2m in2n in2o in2p in2q in2r in2s in2t in2u in2v in2w in2x in2y in2z in30 in31 in32 in33 in34 in35 in36 in37 in38 in39 in3a in3b in3c in3d in3e in3f in3g in3h in3i in3j in3k in3l in3m in3n in3o
+.outputs out0 out1 out2 out3 out4 out5 out6 out7 out8 out9 outa outb outc outd oute outf outg outh outi outj outk outl outm outn outo outp outq outr outs outt outu outv outw outx outy outz out10 out11 out12 out13 out14 out15 out16 out17 out18 out19 out1a out1b out1c out1d out1e out1f out1g out1h out1i out1j out1k out1l out1m out1n out1o out1p out1q out1r out1s out1t out1u out1v out1w out1x out1y out1z out20 out21 out22 out23 out24 out25 out26 out27 out28 out29 out2a out2b out2c out2d out2e out2f out2g out2h out2i out2j out2k out2l out2m out2n out2o out2p out2q out2r out2s out2t out2u out2v out2w out2x out2y out2z out30 out31 out32 out33 out34 out35 out36 out37 out38 out39 out3a out3b out3c out3d out3e out3f out3g out3h out3i out3j out3k out3l out3m out3n out3o out3p out3q out3r out3s out3t out3u out3v out3w out3x out3y out3z out40 out41 out42 out43 out44 out45 out46 out47 out48 out49 out4a out4b out4c out4d out4e out4f out4g out4h out4i out4j out4k out4l out4m out4n out4o out4p out4q out4r out4s out4t out4u out4v out4w out4x out4y out4z out50 out51 out52 out53 out54 out55 out56 out57 out58 out59 out5a out5b out5c out5d out5e out5f out5g out5h out5i
+.names zero
+.names one
+1
+.latch k3 aY 0
+.latch k4 b9 0
+.latch k5 ca 0
+.latch k6 cb 0
+.latch k7 cc 0
+.latch k8 cd 0
+.latch k9 ce 0
+.latch la cf 0
+.latch lb cg 0
+.latch lc ch 0
+.latch ld ci 0
+.latch le cj 0
+.latch lf ck 0
+.latch lg cl 0
+.latch lh cm 0
+.latch li cn 0
+.latch lj co 0
+.latch lk cp 0
+.latch ll cq 0
+.latch lm cr 0
+.latch ln cs 0
+.latch lo ct 0
+.latch lp cu 0
+.latch lq cv 0
+.latch lr cw 0
+.latch ls cx 0
+.latch lt cy 0
+.latch lu cz 0
+.latch lv cA 0
+.latch lw cB 0
+.latch lx cC 0
+.latch ly cD 0
+.latch lz cE 0
+.latch lA cF 0
+.latch lB cG 0
+.latch lC cH 0
+.latch lD cI 0
+.latch lE cJ 0
+.latch lF cK 0
+.latch lG cL 0
+.latch lH cM 0
+.latch lI cN 0
+.latch lJ cO 0
+.latch lK cP 0
+.latch lL cQ 0
+.latch lM cR 0
+.latch lN cS 0
+.latch lO cT 0
+.latch lP cU 0
+.latch lQ cV 0
+.latch lR cW 0
+.latch lS cX 0
+.latch lT cY 0
+.latch lU cZ 0
+.latch lV c0 0
+.latch lW c1 0
+.latch lX c2 0
+.latch lY c3 0
+.latch lZ c4 0
+.latch l0 c5 0
+.latch l1 c6 0
+.latch l2 c7 0
+.latch l3 c8 0
+.latch l4 c9 0
+.latch l5 d6 0
+.latch l6 d7 0
+.latch l7 d8 0
+.latch l8 d9 0
+.latch l9 ea 0
+.latch ma eb 0
+.latch mb ec 0
+.latch mc ed 0
+.latch md ee 0
+.latch me ef 0
+.latch mf eg 0
+.latch mg eh 0
+.latch mh ei 0
+.latch mi ej 0
+.latch mj ek 0
+.latch mk el 0
+.latch ml em 0
+.latch mm en 0
+.latch mn eo 0
+.latch mo ep 0
+.latch mp eq 0
+.latch mq er 0
+.latch mr es 0
+.latch ms et 0
+.latch mt eu 0
+.latch mu ev 0
+.latch mv ew 0
+.latch mw ex 0
+.latch mx ey 0
+.latch my ez 0
+.latch mz eA 0
+.latch mA eB 0
+.latch mB aZ 0
+.latch mC da 0
+.latch mD t 0
+.latch mE a0 0
+.latch mF a1 0
+.latch mG a2 0
+.latch mH a3 0
+.latch mI a4 0
+.latch mJ a5 0
+.latch mK a6 0
+.latch mL a7 0
+.latch mM a8 0
+.latch mN a9 0
+.latch mO ba 0
+.latch mP bb 0
+.latch mQ bc 0
+.latch mR bd 0
+.latch mS be 0
+.latch mT bf 0
+.latch mU bg 0
+.latch mV bh 0
+.latch mW bi 0
+.latch mX bj 0
+.latch mY bk 0
+.latch mZ bl 0
+.latch m0 bm 0
+.latch m1 bn 0
+.latch m2 bo 0
+.latch m3 bp 0
+.latch m4 bq 0
+.latch m5 br 0
+.latch m6 bs 0
+.latch m7 bt 0
+.latch m8 bu 0
+.latch m9 C 0
+.latch na bv 0
+.latch nb bw 0
+.latch nc bx 0
+.latch nd by 0
+.latch ne bz 0
+.latch nf bA 0
+.latch ng bB 0
+.latch nh bC 0
+.latch ni bD 0
+.latch nj bE 0
+.latch nk bF 0
+.latch nl bG 0
+.latch nm bH 0
+.latch nn bI 0
+.latch no bJ 0
+.latch np bK 0
+.latch nq bL 0
+.latch nr bM 0
+.latch ns bN 0
+.latch nt bO 0
+.latch nu bP 0
+.latch nv bQ 0
+.latch nw bR 0
+.latch nx bS 0
+.latch ny bT 0
+.latch nz bU 0
+.latch nA bV 0
+.latch nB bW 0
+.latch nC bX 0
+.latch nD bY 0
+.latch nE bZ 0
+.latch nF r 0
+.latch nG D 0
+.latch nH E 0
+.latch nI F 0
+.latch nJ G 0
+.latch nK H 0
+.latch nL I 0
+.latch nM J 0
+.latch nN K 0
+.latch nO L 0
+.latch nP M 0
+.latch nQ N 0
+.latch nR O 0
+.latch nS P 0
+.latch nT Q 0
+.latch nU R 0
+.latch nV S 0
+.latch nW T 0
+.latch nX U 0
+.latch nY V 0
+.latch nZ W 0
+.latch n0 X 0
+.latch n1 Y 0
+.latch n2 Z 0
+.latch n3 aa 0
+.latch n4 ab 0
+.latch n5 ac 0
+.latch n6 ad 0
+.latch n7 ae 0
+.latch n8 af 0
+.latch n9 ag 0
+.latch oa ah 0
+.latch ob s 0
+.latch oc ai 0
+.latch od aj 0
+.latch oe ak 0
+.latch of al 0
+.latch og am 0
+.latch oh an 0
+.latch oi ao 0
+.latch oj ap 0
+.latch ok aq 0
+.latch ol ar 0
+.latch om as 0
+.latch on at 0
+.latch oo au 0
+.latch op av 0
+.latch oq aw 0
+.latch or ax 0
+.latch os ay 0
+.latch ot az 0
+.latch ou aA 0
+.latch ov aB 0
+.latch ow aC 0
+.latch ox aD 0
+.latch oy aE 0
+.latch oz aF 0
+.latch oA aG 0
+.latch oB aH 0
+.latch oC aI 0
+.latch oD aJ 0
+.latch oE aK 0
+.latch oF aL 0
+.latch oG aM 0
+.latch oH b0 0
+.latch oI b1 0
+.latch oJ b2 0
+.latch oK aN 0
+.latch oL aO 0
+.latch oM aP 0
+.latch oN aQ 0
+.latch oO aR 0
+.latch oP db 0
+.latch oQ dc 0
+.latch oR dd 0
+.latch oS de 0
+.latch oT aS 0
+.latch oU df 0
+.latch oV b3 0
+.latch oW f 0
+.latch oX eC 0
+.names b0 zero eD
+01 1
+10 1
+.names b1 zero dg
+01 1
+10 1
+.names zero eD dh
+1- 1
+-1 1
+.names dh dg eE
+1- 1
+-1 1
+.names eE di
+0 1
+.names b0 one eF
+01 1
+10 1
+.names zero eF dj
+1- 1
+-1 1
+.names dj dg eG
+1- 1
+-1 1
+.names eG eH
+0 1
+.names b1 one dk
+01 1
+10 1
+.names dh dk eI
+1- 1
+-1 1
+.names eI eJ
+0 1
+.names dj dk eK
+1- 1
+-1 1
+.names eK eL
+0 1
+.names in0 dl
+0 1
+.names one in1 eM
+11 1
+.names eM dl eN
+11 1
+.names aZ eO
+0 1
+.names one eN aT
+11 1
+.names aT di eP
+11 1
+.names eP in2 eQ
+11 1
+.names eQ eO u
+11 1
+.names aT eH v
+11 1
+.names aT eJ A
+11 1
+.names aT eL aU
+11 1
+.names b2 one b4
+01 1
+10 1
+.names aN one eR
+01 1
+10 1
+.names aO one eS
+01 1
+10 1
+.names aP one eT
+01 1
+10 1
+.names aQ one eU
+01 1
+10 1
+.names aR zero dm
+01 1
+10 1
+.names zero b4 eV
+1- 1
+-1 1
+.names eV eR eW
+1- 1
+-1 1
+.names eW eS eX
+1- 1
+-1 1
+.names eX eT eY
+1- 1
+-1 1
+.names eY eU dn
+1- 1
+-1 1
+.names dn dm eZ
+1- 1
+-1 1
+.names eZ e0
+0 1
+.names aR one e1
+01 1
+10 1
+.names dn e1 e2
+1- 1
+-1 1
+.names e2 e3
+0 1
+.names aR do
+0 1
+.names C e4
+0 1
+.names db e5
+0 1
+.names t e4 e6
+01 1
+10 1
+.names e6 e5 t e7
+11- 1
+0-1 1
+.names e7 dp
+0 1
+.names s e8
+0 1
+.names dc e9
+0 1
+.names r e8 fa
+01 1
+10 1
+.names fa e9 r fb
+11- 1
+0-1 1
+.names fb j
+0 1
+.names dp fc
+0 1
+.names one df dq
+11 1
+.names dq b3 fd
+11 1
+.names fd fc fe
+11 1
+.names b3 ff
+0 1
+.names dq ff fg
+11 1
+.names one f aV
+11 1
+.names aV aS fh
+11 1
+.names fg fh dr
+1- 1
+-1 1
+.names f fi
+0 1
+.names fi dr fj
+1- 1
+-1 1
+.names one v fk
+11 1
+.names fk e0 B
+11 1
+.names j D ai fl
+11- 1
+0-1 1
+.names j E aj fm
+11- 1
+0-1 1
+.names j F ak fn
+11- 1
+0-1 1
+.names j G al fo
+11- 1
+0-1 1
+.names j H am fp
+11- 1
+0-1 1
+.names j I an fq
+11- 1
+0-1 1
+.names j J ao fr
+11- 1
+0-1 1
+.names j K ap fs
+11- 1
+0-1 1
+.names j L aq ft
+11- 1
+0-1 1
+.names j M ar fu
+11- 1
+0-1 1
+.names j N as fv
+11- 1
+0-1 1
+.names j O at fw
+11- 1
+0-1 1
+.names j P au fx
+11- 1
+0-1 1
+.names j Q av fy
+11- 1
+0-1 1
+.names j R aw fz
+11- 1
+0-1 1
+.names j S ax fA
+11- 1
+0-1 1
+.names j T ay fB
+11- 1
+0-1 1
+.names j U az fC
+11- 1
+0-1 1
+.names j V aA fD
+11- 1
+0-1 1
+.names j W aB fE
+11- 1
+0-1 1
+.names j X aC fF
+11- 1
+0-1 1
+.names j Y aD fG
+11- 1
+0-1 1
+.names j Z aE fH
+11- 1
+0-1 1
+.names j aa aF fI
+11- 1
+0-1 1
+.names j ab aG fJ
+11- 1
+0-1 1
+.names j ac aH fK
+11- 1
+0-1 1
+.names j ad aI fL
+11- 1
+0-1 1
+.names j ae aJ fM
+11- 1
+0-1 1
+.names j af aK fN
+11- 1
+0-1 1
+.names j ag aL fO
+11- 1
+0-1 1
+.names j ah aM fP
+11- 1
+0-1 1
+.names j r s fQ
+11- 1
+0-1 1
+.names aV do fR
+11 1
+.names fR t ds
+11 1
+.names ds dt
+0 1
+.names dd du
+0 1
+.names r dt dv
+01 1
+10 1
+.names dv du fS
+01 1
+10 1
+.names dv du r fT
+11- 1
+0-1 1
+.names fT fU
+0 1
+.names de dw
+0 1
+.names s dt dx
+01 1
+10 1
+.names dx dw fV
+01 1
+10 1
+.names dx dw s fW
+11- 1
+0-1 1
+.names fW fX
+0 1
+.names one A dy
+11 1
+.names dy do b5
+11 1
+.names aY ds dz
+01 1
+10 1
+.names dz aS fY
+01 1
+10 1
+.names dz aS aY fZ
+11- 1
+0-1 1
+.names one aU f0
+11 1
+.names f0 f dA
+11 1
+.names aZ fj f1
+1- 1
+-1 1
+.names da dr f2
+1- 1
+-1 1
+.names one in3 f3
+11 1
+.names f3 in4 f4
+11 1
+.names zero in5 f5
+1- 1
+-1 1
+.names f5 in6 f6
+1- 1
+-1 1
+.names f6 in7 f7
+1- 1
+-1 1
+.names f7 in8 f8
+1- 1
+-1 1
+.names f8 in9 f9
+1- 1
+-1 1
+.names f9 ina ga
+1- 1
+-1 1
+.names ga inb gb
+1- 1
+-1 1
+.names gb inc gc
+1- 1
+-1 1
+.names gc ind gd
+1- 1
+-1 1
+.names gd ine ge
+1- 1
+-1 1
+.names ge inf gf
+1- 1
+-1 1
+.names gf ing gg
+1- 1
+-1 1
+.names gg inh gh
+1- 1
+-1 1
+.names gh ini gi
+1- 1
+-1 1
+.names gi inj gj
+1- 1
+-1 1
+.names gj ink gk
+1- 1
+-1 1
+.names gk inl gl
+1- 1
+-1 1
+.names gl inm gm
+1- 1
+-1 1
+.names gm inn gn
+1- 1
+-1 1
+.names gn ino go
+1- 1
+-1 1
+.names go inp gp
+1- 1
+-1 1
+.names gp inq gq
+1- 1
+-1 1
+.names gq inr gr
+1- 1
+-1 1
+.names gr ins gs
+1- 1
+-1 1
+.names gs int gt
+1- 1
+-1 1
+.names gt inu gu
+1- 1
+-1 1
+.names gu inv gv
+1- 1
+-1 1
+.names gv inw gw
+1- 1
+-1 1
+.names gw inx gx
+1- 1
+-1 1
+.names gx iny gy
+1- 1
+-1 1
+.names gy inz gz
+1- 1
+-1 1
+.names gz in10 gA
+1- 1
+-1 1
+.names zero in11 gB
+1- 1
+-1 1
+.names gB in12 gC
+1- 1
+-1 1
+.names gC in13 gD
+1- 1
+-1 1
+.names gD in14 gE
+1- 1
+-1 1
+.names gE in15 gF
+1- 1
+-1 1
+.names gF in16 gG
+1- 1
+-1 1
+.names gG in17 gH
+1- 1
+-1 1
+.names gH in18 gI
+1- 1
+-1 1
+.names gI in19 gJ
+1- 1
+-1 1
+.names gJ in1a gK
+1- 1
+-1 1
+.names gK in1b gL
+1- 1
+-1 1
+.names gL in1c gM
+1- 1
+-1 1
+.names gM in1d gN
+1- 1
+-1 1
+.names gN in1e gO
+1- 1
+-1 1
+.names gO in1f gP
+1- 1
+-1 1
+.names gP in1g gQ
+1- 1
+-1 1
+.names gQ in1h gR
+1- 1
+-1 1
+.names gR in1i gS
+1- 1
+-1 1
+.names gS in1j gT
+1- 1
+-1 1
+.names gT in1k gU
+1- 1
+-1 1
+.names gU in1l gV
+1- 1
+-1 1
+.names gV in1m gW
+1- 1
+-1 1
+.names gW in1n gX
+1- 1
+-1 1
+.names gX in1o gY
+1- 1
+-1 1
+.names gY in1p gZ
+1- 1
+-1 1
+.names gZ in1q g0
+1- 1
+-1 1
+.names g0 in1r g1
+1- 1
+-1 1
+.names g1 in1s g2
+1- 1
+-1 1
+.names g2 in1t g3
+1- 1
+-1 1
+.names g3 in1u g4
+1- 1
+-1 1
+.names g4 in1v g5
+1- 1
+-1 1
+.names g5 in1w g6
+1- 1
+-1 1
+.names zero in1x g7
+1- 1
+-1 1
+.names g7 in1y g8
+1- 1
+-1 1
+.names g8 in1z g9
+1- 1
+-1 1
+.names g9 in20 ha
+1- 1
+-1 1
+.names ha in21 hb
+1- 1
+-1 1
+.names hb in22 hc
+1- 1
+-1 1
+.names hc in23 hd
+1- 1
+-1 1
+.names hd in24 he
+1- 1
+-1 1
+.names he in25 hf
+1- 1
+-1 1
+.names hf in26 hg
+1- 1
+-1 1
+.names hg in27 hh
+1- 1
+-1 1
+.names hh in28 hi
+1- 1
+-1 1
+.names hi in29 hj
+1- 1
+-1 1
+.names hj in2a hk
+1- 1
+-1 1
+.names hk in2b hl
+1- 1
+-1 1
+.names hl in2c hm
+1- 1
+-1 1
+.names hm in2d hn
+1- 1
+-1 1
+.names hn in2e ho
+1- 1
+-1 1
+.names ho in2f hp
+1- 1
+-1 1
+.names hp in2g hq
+1- 1
+-1 1
+.names hq in2h hr
+1- 1
+-1 1
+.names hr in2i hs
+1- 1
+-1 1
+.names hs in2j ht
+1- 1
+-1 1
+.names ht in2k hu
+1- 1
+-1 1
+.names hu in2l hv
+1- 1
+-1 1
+.names hv in2m hw
+1- 1
+-1 1
+.names hw in2n hx
+1- 1
+-1 1
+.names hx in2o hy
+1- 1
+-1 1
+.names hy in2p hz
+1- 1
+-1 1
+.names hz in2q hA
+1- 1
+-1 1
+.names hA in2r hB
+1- 1
+-1 1
+.names hB in2s hC
+1- 1
+-1 1
+.names zero in2t hD
+1- 1
+-1 1
+.names hD in2u hE
+1- 1
+-1 1
+.names hE in2v hF
+1- 1
+-1 1
+.names hF in2w hG
+1- 1
+-1 1
+.names hG in2x hH
+1- 1
+-1 1
+.names hH in2y hI
+1- 1
+-1 1
+.names hI in2z hJ
+1- 1
+-1 1
+.names hJ in30 hK
+1- 1
+-1 1
+.names hK in31 hL
+1- 1
+-1 1
+.names hL in32 hM
+1- 1
+-1 1
+.names hM in33 hN
+1- 1
+-1 1
+.names hN in34 hO
+1- 1
+-1 1
+.names hO in35 hP
+1- 1
+-1 1
+.names hP in36 hQ
+1- 1
+-1 1
+.names hQ in37 hR
+1- 1
+-1 1
+.names hR in38 hS
+1- 1
+-1 1
+.names hS in39 hT
+1- 1
+-1 1
+.names hT in3a hU
+1- 1
+-1 1
+.names hU in3b hV
+1- 1
+-1 1
+.names hV in3c hW
+1- 1
+-1 1
+.names hW in3d hX
+1- 1
+-1 1
+.names hX in3e hY
+1- 1
+-1 1
+.names hY in3f hZ
+1- 1
+-1 1
+.names hZ in3g h0
+1- 1
+-1 1
+.names h0 in3h h1
+1- 1
+-1 1
+.names h1 in3i h2
+1- 1
+-1 1
+.names h2 in3j h3
+1- 1
+-1 1
+.names h3 in3k h4
+1- 1
+-1 1
+.names h4 in3l h5
+1- 1
+-1 1
+.names h5 in3m h6
+1- 1
+-1 1
+.names h6 in3n h7
+1- 1
+-1 1
+.names h7 in3o h8
+1- 1
+-1 1
+.names one gA h9
+11 1
+.names h9 g6 ia
+11 1
+.names ia hC ib
+11 1
+.names ib h8 ic
+11 1
+.names v A dB
+1- 1
+-1 1
+.names b4 zero id
+01 1
+10 1
+.names b4 zero b2 dC
+11- 1
+0-1 1
+.names aN zero dD
+01 1
+10 1
+.names dD dC ie
+01 1
+10 1
+.names dD dC aN dE
+11- 1
+0-1 1
+.names aO zero dF
+01 1
+10 1
+.names dF dE if
+01 1
+10 1
+.names dF dE aO dG
+11- 1
+0-1 1
+.names aP zero dH
+01 1
+10 1
+.names dH dG ig
+01 1
+10 1
+.names dH dG aP dI
+11- 1
+0-1 1
+.names aQ zero dJ
+01 1
+10 1
+.names dJ dI ih
+01 1
+10 1
+.names dJ dI aQ ii
+11- 1
+0-1 1
+.names dm ii ij
+01 1
+10 1
+.names u B ik
+1- 1
+-1 1
+.names dy e3 dK
+11 1
+.names one dl q
+11 1
+.names q A dL
+11 1
+.names dL one il
+11 1
+.names zero A im
+1- 1
+-1 1
+.names im in
+0 1
+.names q in io
+11 1
+.names zero il a
+1- 1
+-1 1
+.names zero io b
+1- 1
+-1 1
+.names a b9 b aY k3
+11-- 1
+--11 1
+.names a ca b b9 k4
+11-- 1
+--11 1
+.names a cb b ca k5
+11-- 1
+--11 1
+.names a cc b cb k6
+11-- 1
+--11 1
+.names a cd b cc k7
+11-- 1
+--11 1
+.names a ce b cd k8
+11-- 1
+--11 1
+.names a cf b ce k9
+11-- 1
+--11 1
+.names a cg b cf la
+11-- 1
+--11 1
+.names a ch b cg lb
+11-- 1
+--11 1
+.names a ci b ch lc
+11-- 1
+--11 1
+.names a cj b ci ld
+11-- 1
+--11 1
+.names a ck b cj le
+11-- 1
+--11 1
+.names a cl b ck lf
+11-- 1
+--11 1
+.names a cm b cl lg
+11-- 1
+--11 1
+.names a cn b cm lh
+11-- 1
+--11 1
+.names a co b cn li
+11-- 1
+--11 1
+.names a cp b co lj
+11-- 1
+--11 1
+.names a cq b cp lk
+11-- 1
+--11 1
+.names a cr b cq ll
+11-- 1
+--11 1
+.names a cs b cr lm
+11-- 1
+--11 1
+.names a ct b cs ln
+11-- 1
+--11 1
+.names a cu b ct lo
+11-- 1
+--11 1
+.names a cv b cu lp
+11-- 1
+--11 1
+.names a cw b cv lq
+11-- 1
+--11 1
+.names a cx b cw lr
+11-- 1
+--11 1
+.names a cy b cx ls
+11-- 1
+--11 1
+.names a cz b cy lt
+11-- 1
+--11 1
+.names a cA b cz lu
+11-- 1
+--11 1
+.names a cB b cA lv
+11-- 1
+--11 1
+.names a cC b cB lw
+11-- 1
+--11 1
+.names a cD b cC lx
+11-- 1
+--11 1
+.names a cE b cD ly
+11-- 1
+--11 1
+.names a cF b cE lz
+11-- 1
+--11 1
+.names a cG b cF lA
+11-- 1
+--11 1
+.names a cH b cG lB
+11-- 1
+--11 1
+.names a cI b cH lC
+11-- 1
+--11 1
+.names a cJ b cI lD
+11-- 1
+--11 1
+.names a cK b cJ lE
+11-- 1
+--11 1
+.names a cL b cK lF
+11-- 1
+--11 1
+.names a cM b cL lG
+11-- 1
+--11 1
+.names a cN b cM lH
+11-- 1
+--11 1
+.names a cO b cN lI
+11-- 1
+--11 1
+.names a cP b cO lJ
+11-- 1
+--11 1
+.names a cQ b cP lK
+11-- 1
+--11 1
+.names a cR b cQ lL
+11-- 1
+--11 1
+.names a cS b cR lM
+11-- 1
+--11 1
+.names a cT b cS lN
+11-- 1
+--11 1
+.names a cU b cT lO
+11-- 1
+--11 1
+.names a cV b cU lP
+11-- 1
+--11 1
+.names a cW b cV lQ
+11-- 1
+--11 1
+.names a cX b cW lR
+11-- 1
+--11 1
+.names a cY b cX lS
+11-- 1
+--11 1
+.names a cZ b cY lT
+11-- 1
+--11 1
+.names a c0 b cZ lU
+11-- 1
+--11 1
+.names a c1 b c0 lV
+11-- 1
+--11 1
+.names a c2 b c1 lW
+11-- 1
+--11 1
+.names a c3 b c2 lX
+11-- 1
+--11 1
+.names a c4 b c3 lY
+11-- 1
+--11 1
+.names a c5 b c4 lZ
+11-- 1
+--11 1
+.names a c6 b c5 l0
+11-- 1
+--11 1
+.names a c7 b c6 l1
+11-- 1
+--11 1
+.names a c8 b c7 l2
+11-- 1
+--11 1
+.names a c9 b c8 l3
+11-- 1
+--11 1
+.names a fY b c9 l4
+11-- 1
+--11 1
+.names q dA ip
+11 1
+.names ip one iq
+11 1
+.names zero dA ir
+1- 1
+-1 1
+.names ir is
+0 1
+.names q is it
+11 1
+.names zero iq k
+1- 1
+-1 1
+.names zero it l
+1- 1
+-1 1
+.names k C l d6 l5
+11-- 1
+--11 1
+.names k bv l d7 l6
+11-- 1
+--11 1
+.names k bw l d8 l7
+11-- 1
+--11 1
+.names k bx l d9 l8
+11-- 1
+--11 1
+.names k by l ea l9
+11-- 1
+--11 1
+.names k bz l eb ma
+11-- 1
+--11 1
+.names k bA l ec mb
+11-- 1
+--11 1
+.names k bB l ed mc
+11-- 1
+--11 1
+.names k bC l ee md
+11-- 1
+--11 1
+.names k bD l ef me
+11-- 1
+--11 1
+.names k bE l eg mf
+11-- 1
+--11 1
+.names k bF l eh mg
+11-- 1
+--11 1
+.names k bG l ei mh
+11-- 1
+--11 1
+.names k bH l ej mi
+11-- 1
+--11 1
+.names k bI l ek mj
+11-- 1
+--11 1
+.names k bJ l el mk
+11-- 1
+--11 1
+.names k bK l em ml
+11-- 1
+--11 1
+.names k bL l en mm
+11-- 1
+--11 1
+.names k bM l eo mn
+11-- 1
+--11 1
+.names k bN l ep mo
+11-- 1
+--11 1
+.names k bO l eq mp
+11-- 1
+--11 1
+.names k bP l er mq
+11-- 1
+--11 1
+.names k bQ l es mr
+11-- 1
+--11 1
+.names k bR l et ms
+11-- 1
+--11 1
+.names k bS l eu mt
+11-- 1
+--11 1
+.names k bT l ev mu
+11-- 1
+--11 1
+.names k bU l ew mv
+11-- 1
+--11 1
+.names k bV l ex mw
+11-- 1
+--11 1
+.names k bW l ey mx
+11-- 1
+--11 1
+.names k bX l ez my
+11-- 1
+--11 1
+.names k bY l eA mz
+11-- 1
+--11 1
+.names k bZ l eB mA
+11-- 1
+--11 1
+.names q aU dM
+11 1
+.names dM one iu
+11 1
+.names zero aU dN
+1- 1
+-1 1
+.names dN dO
+0 1
+.names q dO iv
+11 1
+.names zero iu dP
+1- 1
+-1 1
+.names zero iv dQ
+1- 1
+-1 1
+.names dP f1 dQ aZ mB
+11-- 1
+--11 1
+.names dP f2 dQ da mC
+11-- 1
+--11 1
+.names q b5 dR
+11 1
+.names dR one iw
+11 1
+.names zero b5 b6
+1- 1
+-1 1
+.names b6 dS
+0 1
+.names q B b7
+11 1
+.names b7 dS ix
+11 1
+.names b6 B dT
+1- 1
+-1 1
+.names dT iy
+0 1
+.names q u aW
+11 1
+.names aW iy iz
+11 1
+.names dT u dU
+1- 1
+-1 1
+.names dU iA
+0 1
+.names q v b8
+11 1
+.names b8 iA iB
+11 1
+.names dU v iC
+1- 1
+-1 1
+.names iC iD
+0 1
+.names q iD iE
+11 1
+.names zero iw aX
+1- 1
+-1 1
+.names zero ix m
+1- 1
+-1 1
+.names zero iz n
+1- 1
+-1 1
+.names aX iB o
+1- 1
+-1 1
+.names zero iE p
+1- 1
+-1 1
+.names o a0 m fl n in5 p t mD
+11------ 1
+--11---- 1
+----11-- 1
+------11 1
+.names o a1 m fm n in6 p a0 mE
+11------ 1
+--11---- 1
+----11-- 1
+------11 1
+.names o a2 m fn n in7 p a1 mF
+11------ 1
+--11---- 1
+----11-- 1
+------11 1
+.names o a3 m fo n in8 p a2 mG
+11------ 1
+--11---- 1
+----11-- 1
+------11 1
+.names o a4 m fp n in9 p a3 mH
+11------ 1
+--11---- 1
+----11-- 1
+------11 1
+.names o a5 m fq n ina p a4 mI
+11------ 1
+--11---- 1
+----11-- 1
+------11 1
+.names o a6 m fr n inb p a5 mJ
+11------ 1
+--11---- 1
+----11-- 1
+------11 1
+.names o a7 m fs n inc p a6 mK
+11------ 1
+--11---- 1
+----11-- 1
+------11 1
+.names o a8 m ft n ind p a7 mL
+11------ 1
+--11---- 1
+----11-- 1
+------11 1
+.names o a9 m fu n ine p a8 mM
+11------ 1
+--11---- 1
+----11-- 1
+------11 1
+.names o ba m fv n inf p a9 mN
+11------ 1
+--11---- 1
+----11-- 1
+------11 1
+.names o bb m fw n ing p ba mO
+11------ 1
+--11---- 1
+----11-- 1
+------11 1
+.names o bc m fx n inh p bb mP
+11------ 1
+--11---- 1
+----11-- 1
+------11 1
+.names o bd m fy n ini p bc mQ
+11------ 1
+--11---- 1
+----11-- 1
+------11 1
+.names o be m fz n inj p bd mR
+11------ 1
+--11---- 1
+----11-- 1
+------11 1
+.names o bf m fA n ink p be mS
+11------ 1
+--11---- 1
+----11-- 1
+------11 1
+.names o bg m fB n inl p bf mT
+11------ 1
+--11---- 1
+----11-- 1
+------11 1
+.names o bh m fC n inm p bg mU
+11------ 1
+--11---- 1
+----11-- 1
+------11 1
+.names o bi m fD n inn p bh mV
+11------ 1
+--11---- 1
+----11-- 1
+------11 1
+.names o bj m fE n ino p bi mW
+11------ 1
+--11---- 1
+----11-- 1
+------11 1
+.names o bk m fF n inp p bj mX
+11------ 1
+--11---- 1
+----11-- 1
+------11 1
+.names o bl m fG n inq p bk mY
+11------ 1
+--11---- 1
+----11-- 1
+------11 1
+.names o bm m fH n inr p bl mZ
+11------ 1
+--11---- 1
+----11-- 1
+------11 1
+.names o bn m fI n ins p bm m0
+11------ 1
+--11---- 1
+----11-- 1
+------11 1
+.names o bo m fJ n int p bn m1
+11------ 1
+--11---- 1
+----11-- 1
+------11 1
+.names o bp m fK n inu p bo m2
+11------ 1
+--11---- 1
+----11-- 1
+------11 1
+.names o bq m fL n inv p bp m3
+11------ 1
+--11---- 1
+----11-- 1
+------11 1
+.names o br m fM n inw p bq m4
+11------ 1
+--11---- 1
+----11-- 1
+------11 1
+.names o bs m fN n inx p br m5
+11------ 1
+--11---- 1
+----11-- 1
+------11 1
+.names o bt m fO n iny p bs m6
+11------ 1
+--11---- 1
+----11-- 1
+------11 1
+.names o bu m fP n inz p bt m7
+11------ 1
+--11---- 1
+----11-- 1
+------11 1
+.names o t m fQ n in10 p bu m8
+11------ 1
+--11---- 1
+----11-- 1
+------11 1
+.names aW one iF
+11 1
+.names zero u w
+1- 1
+-1 1
+.names w x
+0 1
+.names b8 x iG
+11 1
+.names w v iH
+1- 1
+-1 1
+.names iH iI
+0 1
+.names q iI iJ
+11 1
+.names zero iF g
+1- 1
+-1 1
+.names zero iG h
+1- 1
+-1 1
+.names zero iJ i
+1- 1
+-1 1
+.names g in11 h bv i C m9
+11---- 1
+--11-- 1
+----11 1
+.names g in12 h bw i bv na
+11---- 1
+--11-- 1
+----11 1
+.names g in13 h bx i bw nb
+11---- 1
+--11-- 1
+----11 1
+.names g in14 h by i bx nc
+11---- 1
+--11-- 1
+----11 1
+.names g in15 h bz i by nd
+11---- 1
+--11-- 1
+----11 1
+.names g in16 h bA i bz ne
+11---- 1
+--11-- 1
+----11 1
+.names g in17 h bB i bA nf
+11---- 1
+--11-- 1
+----11 1
+.names g in18 h bC i bB ng
+11---- 1
+--11-- 1
+----11 1
+.names g in19 h bD i bC nh
+11---- 1
+--11-- 1
+----11 1
+.names g in1a h bE i bD ni
+11---- 1
+--11-- 1
+----11 1
+.names g in1b h bF i bE nj
+11---- 1
+--11-- 1
+----11 1
+.names g in1c h bG i bF nk
+11---- 1
+--11-- 1
+----11 1
+.names g in1d h bH i bG nl
+11---- 1
+--11-- 1
+----11 1
+.names g in1e h bI i bH nm
+11---- 1
+--11-- 1
+----11 1
+.names g in1f h bJ i bI nn
+11---- 1
+--11-- 1
+----11 1
+.names g in1g h bK i bJ no
+11---- 1
+--11-- 1
+----11 1
+.names g in1h h bL i bK np
+11---- 1
+--11-- 1
+----11 1
+.names g in1i h bM i bL nq
+11---- 1
+--11-- 1
+----11 1
+.names g in1j h bN i bM nr
+11---- 1
+--11-- 1
+----11 1
+.names g in1k h bO i bN ns
+11---- 1
+--11-- 1
+----11 1
+.names g in1l h bP i bO nt
+11---- 1
+--11-- 1
+----11 1
+.names g in1m h bQ i bP nu
+11---- 1
+--11-- 1
+----11 1
+.names g in1n h bR i bQ nv
+11---- 1
+--11-- 1
+----11 1
+.names g in1o h bS i bR nw
+11---- 1
+--11-- 1
+----11 1
+.names g in1p h bT i bS nx
+11---- 1
+--11-- 1
+----11 1
+.names g in1q h bU i bT ny
+11---- 1
+--11-- 1
+----11 1
+.names g in1r h bV i bU nz
+11---- 1
+--11-- 1
+----11 1
+.names g in1s h bW i bV nA
+11---- 1
+--11-- 1
+----11 1
+.names g in1t h bX i bW nB
+11---- 1
+--11-- 1
+----11 1
+.names g in1u h bY i bX nC
+11---- 1
+--11-- 1
+----11 1
+.names g in1v h bZ i bY nD
+11---- 1
+--11-- 1
+----11 1
+.names g in1w h C i bZ nE
+11---- 1
+--11-- 1
+----11 1
+.names aW dS iK
+11 1
+.names b6 u dV
+1- 1
+-1 1
+.names dV iL
+0 1
+.names b8 iL dW
+11 1
+.names dV v iM
+1- 1
+-1 1
+.names iM iN
+0 1
+.names q iN iO
+11 1
+.names zero iK c
+1- 1
+-1 1
+.names aX dW e
+1- 1
+-1 1
+.names zero iO d
+1- 1
+-1 1
+.names e D c in1x d r nF
+11---- 1
+--11-- 1
+----11 1
+.names e E c in1y d D nG
+11---- 1
+--11-- 1
+----11 1
+.names e F c in1z d E nH
+11---- 1
+--11-- 1
+----11 1
+.names e G c in20 d F nI
+11---- 1
+--11-- 1
+----11 1
+.names e H c in21 d G nJ
+11---- 1
+--11-- 1
+----11 1
+.names e I c in22 d H nK
+11---- 1
+--11-- 1
+----11 1
+.names e J c in23 d I nL
+11---- 1
+--11-- 1
+----11 1
+.names e K c in24 d J nM
+11---- 1
+--11-- 1
+----11 1
+.names e L c in25 d K nN
+11---- 1
+--11-- 1
+----11 1
+.names e M c in26 d L nO
+11---- 1
+--11-- 1
+----11 1
+.names e N c in27 d M nP
+11---- 1
+--11-- 1
+----11 1
+.names e O c in28 d N nQ
+11---- 1
+--11-- 1
+----11 1
+.names e P c in29 d O nR
+11---- 1
+--11-- 1
+----11 1
+.names e Q c in2a d P nS
+11---- 1
+--11-- 1
+----11 1
+.names e R c in2b d Q nT
+11---- 1
+--11-- 1
+----11 1
+.names e S c in2c d R nU
+11---- 1
+--11-- 1
+----11 1
+.names e T c in2d d S nV
+11---- 1
+--11-- 1
+----11 1
+.names e U c in2e d T nW
+11---- 1
+--11-- 1
+----11 1
+.names e V c in2f d U nX
+11---- 1
+--11-- 1
+----11 1
+.names e W c in2g d V nY
+11---- 1
+--11-- 1
+----11 1
+.names e X c in2h d W nZ
+11---- 1
+--11-- 1
+----11 1
+.names e Y c in2i d X n0
+11---- 1
+--11-- 1
+----11 1
+.names e Z c in2j d Y n1
+11---- 1
+--11-- 1
+----11 1
+.names e aa c in2k d Z n2
+11---- 1
+--11-- 1
+----11 1
+.names e ab c in2l d aa n3
+11---- 1
+--11-- 1
+----11 1
+.names e ac c in2m d ab n4
+11---- 1
+--11-- 1
+----11 1
+.names e ad c in2n d ac n5
+11---- 1
+--11-- 1
+----11 1
+.names e ae c in2o d ad n6
+11---- 1
+--11-- 1
+----11 1
+.names e af c in2p d ae n7
+11---- 1
+--11-- 1
+----11 1
+.names e ag c in2q d af n8
+11---- 1
+--11-- 1
+----11 1
+.names e ah c in2r d ag n9
+11---- 1
+--11-- 1
+----11 1
+.names zero dW dX
+1- 1
+-1 1
+.names aX fS c in2s dX r d ah oa
+11------ 1
+--11---- 1
+----11-- 1
+------11 1
+.names e ai c in2t d s ob
+11---- 1
+--11-- 1
+----11 1
+.names e aj c in2u d ai oc
+11---- 1
+--11-- 1
+----11 1
+.names e ak c in2v d aj od
+11---- 1
+--11-- 1
+----11 1
+.names e al c in2w d ak oe
+11---- 1
+--11-- 1
+----11 1
+.names e am c in2x d al of
+11---- 1
+--11-- 1
+----11 1
+.names e an c in2y d am og
+11---- 1
+--11-- 1
+----11 1
+.names e ao c in2z d an oh
+11---- 1
+--11-- 1
+----11 1
+.names e ap c in30 d ao oi
+11---- 1
+--11-- 1
+----11 1
+.names e aq c in31 d ap oj
+11---- 1
+--11-- 1
+----11 1
+.names e ar c in32 d aq ok
+11---- 1
+--11-- 1
+----11 1
+.names e as c in33 d ar ol
+11---- 1
+--11-- 1
+----11 1
+.names e at c in34 d as om
+11---- 1
+--11-- 1
+----11 1
+.names e au c in35 d at on
+11---- 1
+--11-- 1
+----11 1
+.names e av c in36 d au oo
+11---- 1
+--11-- 1
+----11 1
+.names e aw c in37 d av op
+11---- 1
+--11-- 1
+----11 1
+.names e ax c in38 d aw oq
+11---- 1
+--11-- 1
+----11 1
+.names e ay c in39 d ax or
+11---- 1
+--11-- 1
+----11 1
+.names e az c in3a d ay os
+11---- 1
+--11-- 1
+----11 1
+.names e aA c in3b d az ot
+11---- 1
+--11-- 1
+----11 1
+.names e aB c in3c d aA ou
+11---- 1
+--11-- 1
+----11 1
+.names e aC c in3d d aB ov
+11---- 1
+--11-- 1
+----11 1
+.names e aD c in3e d aC ow
+11---- 1
+--11-- 1
+----11 1
+.names e aE c in3f d aD ox
+11---- 1
+--11-- 1
+----11 1
+.names e aF c in3g d aE oy
+11---- 1
+--11-- 1
+----11 1
+.names e aG c in3h d aF oz
+11---- 1
+--11-- 1
+----11 1
+.names e aH c in3i d aG oA
+11---- 1
+--11-- 1
+----11 1
+.names e aI c in3j d aH oB
+11---- 1
+--11-- 1
+----11 1
+.names e aJ c in3k d aI oC
+11---- 1
+--11-- 1
+----11 1
+.names e aK c in3l d aJ oD
+11---- 1
+--11-- 1
+----11 1
+.names e aL c in3m d aK oE
+11---- 1
+--11-- 1
+----11 1
+.names e aM c in3n d aL oF
+11---- 1
+--11-- 1
+----11 1
+.names aX fV c in3o dX s d aM oG
+11------ 1
+--11---- 1
+----11-- 1
+------11 1
+.names q dK iP
+11 1
+.names iP dO iQ
+11 1
+.names dN dK dY
+1- 1
+-1 1
+.names dY iR
+0 1
+.names b7 iR iS
+11 1
+.names dY B dZ
+1- 1
+-1 1
+.names dZ iT
+0 1
+.names aW iT iU
+11 1
+.names dZ u iV
+1- 1
+-1 1
+.names iV iW
+0 1
+.names q iW iX
+11 1
+.names zero iQ d0
+1- 1
+-1 1
+.names d0 iU iY
+1- 1
+-1 1
+.names zero iX d1
+1- 1
+-1 1
+.names iY one d1 b0 oH
+11-- 1
+--11 1
+.names d0 iS iZ
+1- 1
+-1 1
+.names iZ one d1 b1 oI
+11-- 1
+--11 1
+.names zero ik d2
+1- 1
+-1 1
+.names d2 i0
+0 1
+.names q dB i1
+11 1
+.names i1 i0 i2
+11 1
+.names d2 dB i3
+1- 1
+-1 1
+.names i3 i4
+0 1
+.names q i4 i5
+11 1
+.names zero i2 y
+1- 1
+-1 1
+.names zero i5 z
+1- 1
+-1 1
+.names y id z b2 oJ
+11-- 1
+--11 1
+.names y ie z aN oK
+11-- 1
+--11 1
+.names y if z aO oL
+11-- 1
+--11 1
+.names y ig z aP oM
+11-- 1
+--11 1
+.names y ih z aQ oN
+11-- 1
+--11 1
+.names y ij z aR oO
+11-- 1
+--11 1
+.names h dp i db oP
+11-- 1
+--11 1
+.names h j i dc oQ
+11-- 1
+--11 1
+.names dR x i6
+11 1
+.names w b5 i7
+1- 1
+-1 1
+.names i7 i8
+0 1
+.names q i8 i9
+11 1
+.names zero i6 d3
+1- 1
+-1 1
+.names zero i9 d4
+1- 1
+-1 1
+.names d3 fU d4 dd oR
+11-- 1
+--11 1
+.names d3 fX d4 de oS
+11-- 1
+--11 1
+.names dL x ja
+11 1
+.names w A jb
+1- 1
+-1 1
+.names jb jc
+0 1
+.names q jc jd
+11 1
+.names zero ja je
+1- 1
+-1 1
+.names zero jd jf
+1- 1
+-1 1
+.names je fZ jf aS oT
+11-- 1
+--11 1
+.names q x jg
+11 1
+.names zero jg d5
+1- 1
+-1 1
+.names g f4 d5 df oU
+11-- 1
+--11 1
+.names g ic d5 b3 oV
+11-- 1
+--11 1
+.names b7 x jh
+11 1
+.names w B ji
+1- 1
+-1 1
+.names ji jj
+0 1
+.names q jj jk
+11 1
+.names zero jh jl
+1- 1
+-1 1
+.names zero jk jm
+1- 1
+-1 1
+.names jl fe jm f oW
+11-- 1
+--11 1
+.names dM x jn
+11 1
+.names w aU jo
+1- 1
+-1 1
+.names jo jp
+0 1
+.names q jp jq
+11 1
+.names zero jn jr
+1- 1
+-1 1
+.names zero jq js
+1- 1
+-1 1
+.names jr one js eC oX
+11-- 1
+--11 1
+.names di oY
+0 1
+.names one t jt
+11 1
+.names jt f oZ
+11 1
+.names one a0 ju
+11 1
+.names ju f o0
+11 1
+.names one a1 jv
+11 1
+.names jv f o1
+11 1
+.names one a2 jw
+11 1
+.names jw f o2
+11 1
+.names one a3 jx
+11 1
+.names jx f o3
+11 1
+.names one a4 jy
+11 1
+.names jy f o4
+11 1
+.names one a5 jz
+11 1
+.names jz f o5
+11 1
+.names one a6 jA
+11 1
+.names jA f o6
+11 1
+.names one a7 jB
+11 1
+.names jB f o7
+11 1
+.names one a8 jC
+11 1
+.names jC f o8
+11 1
+.names one a9 jD
+11 1
+.names jD f o9
+11 1
+.names one ba jE
+11 1
+.names jE f pa
+11 1
+.names one bb jF
+11 1
+.names jF f pb
+11 1
+.names one bc jG
+11 1
+.names jG f pc
+11 1
+.names one bd jH
+11 1
+.names jH f pd
+11 1
+.names one be jI
+11 1
+.names jI f pe
+11 1
+.names one bf jJ
+11 1
+.names jJ f pf
+11 1
+.names one bg jK
+11 1
+.names jK f pg
+11 1
+.names one bh jL
+11 1
+.names jL f ph
+11 1
+.names one bi jM
+11 1
+.names jM f pi
+11 1
+.names one bj jN
+11 1
+.names jN f pj
+11 1
+.names one bk jO
+11 1
+.names jO f pk
+11 1
+.names one bl jP
+11 1
+.names jP f pl
+11 1
+.names one bm jQ
+11 1
+.names jQ f pm
+11 1
+.names one bn jR
+11 1
+.names jR f pn
+11 1
+.names one bo jS
+11 1
+.names jS f po
+11 1
+.names one bp jT
+11 1
+.names jT f pp
+11 1
+.names one bq jU
+11 1
+.names jU f pq
+11 1
+.names one br jV
+11 1
+.names jV f pr
+11 1
+.names one bs jW
+11 1
+.names jW f ps
+11 1
+.names one bt jX
+11 1
+.names jX f pt
+11 1
+.names one bu jY
+11 1
+.names jY f pu
+11 1
+.names zero r jZ
+1- 1
+-1 1
+.names jZ D j0
+1- 1
+-1 1
+.names j0 E j1
+1- 1
+-1 1
+.names j1 F j2
+1- 1
+-1 1
+.names j2 G j3
+1- 1
+-1 1
+.names j3 H j4
+1- 1
+-1 1
+.names j4 I j5
+1- 1
+-1 1
+.names j5 J j6
+1- 1
+-1 1
+.names j6 K j7
+1- 1
+-1 1
+.names j7 L j8
+1- 1
+-1 1
+.names j8 M j9
+1- 1
+-1 1
+.names j9 N ka
+1- 1
+-1 1
+.names ka O kb
+1- 1
+-1 1
+.names kb P kc
+1- 1
+-1 1
+.names kc Q kd
+1- 1
+-1 1
+.names kd R ke
+1- 1
+-1 1
+.names ke S kf
+1- 1
+-1 1
+.names kf T kg
+1- 1
+-1 1
+.names kg U kh
+1- 1
+-1 1
+.names kh V ki
+1- 1
+-1 1
+.names ki W kj
+1- 1
+-1 1
+.names kj X kk
+1- 1
+-1 1
+.names kk Y kl
+1- 1
+-1 1
+.names kl Z km
+1- 1
+-1 1
+.names km aa kn
+1- 1
+-1 1
+.names kn ab ko
+1- 1
+-1 1
+.names ko ac kp
+1- 1
+-1 1
+.names kp ad kq
+1- 1
+-1 1
+.names kq ae kr
+1- 1
+-1 1
+.names kr af ks
+1- 1
+-1 1
+.names ks ag kt
+1- 1
+-1 1
+.names kt ah ku
+1- 1
+-1 1
+.names ku kv
+0 1
+.names aV kv pv
+11 1
+.names zero s kw
+1- 1
+-1 1
+.names kw ai kx
+1- 1
+-1 1
+.names kx aj ky
+1- 1
+-1 1
+.names ky ak kz
+1- 1
+-1 1
+.names kz al kA
+1- 1
+-1 1
+.names kA am kB
+1- 1
+-1 1
+.names kB an kC
+1- 1
+-1 1
+.names kC ao kD
+1- 1
+-1 1
+.names kD ap kE
+1- 1
+-1 1
+.names kE aq kF
+1- 1
+-1 1
+.names kF ar kG
+1- 1
+-1 1
+.names kG as kH
+1- 1
+-1 1
+.names kH at kI
+1- 1
+-1 1
+.names kI au kJ
+1- 1
+-1 1
+.names kJ av kK
+1- 1
+-1 1
+.names kK aw kL
+1- 1
+-1 1
+.names kL ax kM
+1- 1
+-1 1
+.names kM ay kN
+1- 1
+-1 1
+.names kN az kO
+1- 1
+-1 1
+.names kO aA kP
+1- 1
+-1 1
+.names kP aB kQ
+1- 1
+-1 1
+.names kQ aC kR
+1- 1
+-1 1
+.names kR aD kS
+1- 1
+-1 1
+.names kS aE kT
+1- 1
+-1 1
+.names kT aF kU
+1- 1
+-1 1
+.names kU aG kV
+1- 1
+-1 1
+.names kV aH kW
+1- 1
+-1 1
+.names kW aI kX
+1- 1
+-1 1
+.names kX aJ kY
+1- 1
+-1 1
+.names kY aK kZ
+1- 1
+-1 1
+.names kZ aL k0
+1- 1
+-1 1
+.names k0 aM k1
+1- 1
+-1 1
+.names k1 k2
+0 1
+.names aV k2 pw
+11 1
+.names aY out0
+1 1
+.names b9 out1
+1 1
+.names ca out2
+1 1
+.names cb out3
+1 1
+.names cc out4
+1 1
+.names cd out5
+1 1
+.names ce out6
+1 1
+.names cf out7
+1 1
+.names cg out8
+1 1
+.names ch out9
+1 1
+.names ci outa
+1 1
+.names cj outb
+1 1
+.names ck outc
+1 1
+.names cl outd
+1 1
+.names cm oute
+1 1
+.names cn outf
+1 1
+.names co outg
+1 1
+.names cp outh
+1 1
+.names cq outi
+1 1
+.names cr outj
+1 1
+.names cs outk
+1 1
+.names ct outl
+1 1
+.names cu outm
+1 1
+.names cv outn
+1 1
+.names cw outo
+1 1
+.names cx outp
+1 1
+.names cy outq
+1 1
+.names cz outr
+1 1
+.names cA outs
+1 1
+.names cB outt
+1 1
+.names cC outu
+1 1
+.names cD outv
+1 1
+.names cE outw
+1 1
+.names cF outx
+1 1
+.names cG outy
+1 1
+.names cH outz
+1 1
+.names cI out10
+1 1
+.names cJ out11
+1 1
+.names cK out12
+1 1
+.names cL out13
+1 1
+.names cM out14
+1 1
+.names cN out15
+1 1
+.names cO out16
+1 1
+.names cP out17
+1 1
+.names cQ out18
+1 1
+.names cR out19
+1 1
+.names cS out1a
+1 1
+.names cT out1b
+1 1
+.names cU out1c
+1 1
+.names cV out1d
+1 1
+.names cW out1e
+1 1
+.names cX out1f
+1 1
+.names cY out1g
+1 1
+.names cZ out1h
+1 1
+.names c0 out1i
+1 1
+.names c1 out1j
+1 1
+.names c2 out1k
+1 1
+.names c3 out1l
+1 1
+.names c4 out1m
+1 1
+.names c5 out1n
+1 1
+.names c6 out1o
+1 1
+.names c7 out1p
+1 1
+.names c8 out1q
+1 1
+.names c9 out1r
+1 1
+.names d6 out1s
+1 1
+.names d7 out1t
+1 1
+.names d8 out1u
+1 1
+.names d9 out1v
+1 1
+.names ea out1w
+1 1
+.names eb out1x
+1 1
+.names ec out1y
+1 1
+.names ed out1z
+1 1
+.names ee out20
+1 1
+.names ef out21
+1 1
+.names eg out22
+1 1
+.names eh out23
+1 1
+.names ei out24
+1 1
+.names ej out25
+1 1
+.names ek out26
+1 1
+.names el out27
+1 1
+.names em out28
+1 1
+.names en out29
+1 1
+.names eo out2a
+1 1
+.names ep out2b
+1 1
+.names eq out2c
+1 1
+.names er out2d
+1 1
+.names es out2e
+1 1
+.names et out2f
+1 1
+.names eu out2g
+1 1
+.names ev out2h
+1 1
+.names ew out2i
+1 1
+.names ex out2j
+1 1
+.names ey out2k
+1 1
+.names ez out2l
+1 1
+.names eA out2m
+1 1
+.names eB out2n
+1 1
+.names aZ out2o
+1 1
+.names da out2p
+1 1
+.names eC out2q
+1 1
+.names oY out2r
+1 1
+.names f out2s
+1 1
+.names oZ out2t
+1 1
+.names o0 out2u
+1 1
+.names o1 out2v
+1 1
+.names o2 out2w
+1 1
+.names o3 out2x
+1 1
+.names o4 out2y
+1 1
+.names o5 out2z
+1 1
+.names o6 out30
+1 1
+.names o7 out31
+1 1
+.names o8 out32
+1 1
+.names o9 out33
+1 1
+.names pa out34
+1 1
+.names pb out35
+1 1
+.names pc out36
+1 1
+.names pd out37
+1 1
+.names pe out38
+1 1
+.names pf out39
+1 1
+.names pg out3a
+1 1
+.names ph out3b
+1 1
+.names pi out3c
+1 1
+.names pj out3d
+1 1
+.names pk out3e
+1 1
+.names pl out3f
+1 1
+.names pm out3g
+1 1
+.names pn out3h
+1 1
+.names po out3i
+1 1
+.names pp out3j
+1 1
+.names pq out3k
+1 1
+.names pr out3l
+1 1
+.names ps out3m
+1 1
+.names pt out3n
+1 1
+.names pu out3o
+1 1
+.names r out3p
+1 1
+.names D out3q
+1 1
+.names E out3r
+1 1
+.names F out3s
+1 1
+.names G out3t
+1 1
+.names H out3u
+1 1
+.names I out3v
+1 1
+.names J out3w
+1 1
+.names K out3x
+1 1
+.names L out3y
+1 1
+.names M out3z
+1 1
+.names N out40
+1 1
+.names O out41
+1 1
+.names P out42
+1 1
+.names Q out43
+1 1
+.names R out44
+1 1
+.names S out45
+1 1
+.names T out46
+1 1
+.names U out47
+1 1
+.names V out48
+1 1
+.names W out49
+1 1
+.names X out4a
+1 1
+.names Y out4b
+1 1
+.names Z out4c
+1 1
+.names aa out4d
+1 1
+.names ab out4e
+1 1
+.names ac out4f
+1 1
+.names ad out4g
+1 1
+.names ae out4h
+1 1
+.names af out4i
+1 1
+.names ag out4j
+1 1
+.names ah out4k
+1 1
+.names s out4l
+1 1
+.names ai out4m
+1 1
+.names aj out4n
+1 1
+.names ak out4o
+1 1
+.names al out4p
+1 1
+.names am out4q
+1 1
+.names an out4r
+1 1
+.names ao out4s
+1 1
+.names ap out4t
+1 1
+.names aq out4u
+1 1
+.names ar out4v
+1 1
+.names as out4w
+1 1
+.names at out4x
+1 1
+.names au out4y
+1 1
+.names av out4z
+1 1
+.names aw out50
+1 1
+.names ax out51
+1 1
+.names ay out52
+1 1
+.names az out53
+1 1
+.names aA out54
+1 1
+.names aB out55
+1 1
+.names aC out56
+1 1
+.names aD out57
+1 1
+.names aE out58
+1 1
+.names aF out59
+1 1
+.names aG out5a
+1 1
+.names aH out5b
+1 1
+.names aI out5c
+1 1
+.names aJ out5d
+1 1
+.names aK out5e
+1 1
+.names aL out5f
+1 1
+.names aM out5g
+1 1
+.names pv out5h
+1 1
+.names pw out5i
+1 1
+.end

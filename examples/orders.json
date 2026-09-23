@@ -1,0 +1,7 @@
+[
+  { "id": "buyer-A", "side": "buy", "price": "12", "quantity": "1000" },
+  { "id": "buyer-B", "side": "buy", "price": "10", "quantity": "500" },
+  { "id": "seller-C", "side": "sell", "price": "9", "quantity": "300" },
+  { "id": "seller-D", "side": "sell", "price": "10", "quantity": "900" },
+  { "id": "seller-E", "side": "sell", "price": "13", "quantity": "100" }
+]

@@ -1,0 +1,10 @@
+{
+  "id": "lotgate-batch-001",
+  "config": { "mode": "double", "feeBps": 100, "maxOrders": 64 },
+  "orders": [
+    { "id": "buyer-A", "side": "buy", "price": "12", "quantity": "100" },
+    { "id": "buyer-B", "side": "buy", "price": "10", "quantity": "50" },
+    { "id": "seller-C", "side": "sell", "price": "8", "quantity": "80" },
+    { "id": "seller-D", "side": "sell", "price": "10", "quantity": "100" }
+  ]
+}
