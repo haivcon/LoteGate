@@ -1,37 +1,37 @@
-# LotGate operating model
+# LotGate 运营模型
 
-## Supported use case
+## 支持的使用场景
 
-A single trusted operator runs a periodic batch for one homogeneous item and one quote unit. All participants agree those units outside the application. Quantities and prices are integer atomic units; decimal conversion is not provided. The operator enters the orders, closes intake, runs the batch, exports a receipt, and arranges any actual delivery/payment externally. No customer assets are held by LotGate.
+一名受信任的运营者针对一种同质商品和一种报价单位，定期运行批量拍卖。所有参与者在应用之外约定这些单位。数量与价格采用整数最小单位，不提供小数转换。运营者录入订单、关闭录入、执行批次、导出回执，并在外部安排实际交付和付款。LotGate 不持有客户资产。
 
-This is a target operating model, not a claim of existing customers or demonstrated commercial demand.
+这是目标运营模型，不代表已有客户或已验证的商业需求。
 
-## Published rules
+## 公开规则
 
-- Buy limits descend; sell limits ascend. Equal limits preserve intake order.
-- Match only when the current buy limit is at least the current sell limit.
-- Fill the smaller remaining quantity. Continue until one side is empty or limits no longer cross.
-- Uniform price is the limit of the final matched seller; zero for zero volume.
-- Seller fee is floor(gross × feeBps / 10000), per order. Seller limits refer to gross price before fees, not net proceeds.
-- Both quantities and quote obligations must conserve. Every filled buy limit must be at least the uniform price; every filled sell limit must be at most that price.
+- 买单限价降序排列，卖单限价升序排列；同价订单保持录入顺序。
+- 仅在当前买单限价不低于当前卖单限价时撮合。
+- 每次成交数量为双方剩余数量的较小值，持续撮合直至一方订单耗尽或买卖限价不再交叉。
+- 统一成交价为最后一笔已成交卖单的限价；成交量为零时价格为零。
+- 每笔卖单手续费为 `floor(gross × feeBps / 10000)`。卖单限价指扣除手续费前的价格，而非净收入。
+- 数量和报价资产的付款义务都必须守恒。每笔已成交买单的限价不得低于统一成交价；每笔已成交卖单的限价不得高于统一成交价。
 
-Because filled buy limits are nonincreasing and filled sell limits are nondecreasing, the last matched seller price cannot exceed any previously filled buy limit. This is an invariant of this ordering, not a claim of strategy-proofness or resistance to order withholding.
+由于已成交买单限价单调不增、已成交卖单限价单调不减，最后一笔已成交卖单的价格不可能超过之前任何已成交买单的限价。这是该排序规则的不变量，并不表示机制具有策略无关性，也不表示能够抵御隐瞒订单。
 
-## Trust boundary
+## 信任边界
 
-The operator controls order admission, ordering among equal-priced incoming orders, and backend state. A receipt does not prove that omitted orders never existed. Input/result hashes detect inconsistent changes but can be recomputed by an attacker; they are not signatures or on-chain commitments. CPU eth_call does not persist auction state or transfer assets.
+运营者控制订单接收、同价订单的顺序和后端状态。回执不能证明被遗漏的订单从未存在。输入和结果哈希可检测不一致的修改，但攻击者可以重新计算这些哈希，因此它们不是签名或链上承诺。CPU 的 `eth_call` 不会持久化拍卖状态，也不会转移资产。
 
-## Independent receipt check
+## 独立回执验证
 
-From the project root:
+在项目根目录执行，并将示例路径替换为实际导出的回执路径：
 
 ```powershell
 node scripts/verify-receipt.mjs 'C:\absolute\path\to\exported-receipt.json'
 ```
 
-This verifies the input commitment, result hash, arithmetic allocations and order priority. It does not certify RPC provenance or payment.
+该操作检查输入承诺、结果哈希、分配算术及订单优先级，不认证 RPC 来源或付款行为。
 
-## Performance acceptance
+## 性能验收
 
 ```powershell
 node scripts/benchmark-operator.mjs 2
@@ -39,8 +39,8 @@ node scripts/benchmark-operator.mjs 8
 node scripts/benchmark-operator.mjs 64
 ```
 
-Run sequentially, not concurrently with the same order count (report names are count-specific). Each run writes reports/operator-live-N.json and compares the complete CPU-driven result with the local implementation. RUNNING is not PASS. The tested workload uses equal quantities with crossing limits, not all possible worst cases. Set an acceptable duration for the actual operator before release; no SLA is established.
+应按顺序运行。不得同时运行订单数量相同的测试，因为报告文件名由订单数量决定。每次运行写入 `reports/operator-live-N.json`，并将完整的 CPU 驱动结果与本地实现比较。`RUNNING` 不等于 `PASS`。当前工作负载使用数量相等且限价交叉的订单，并不覆盖所有最坏情况。发布前应为实际运营场景确定可接受的完成时间；目前未建立服务时限承诺。
 
-## Public-release blockers
+## 公开发布前的阻塞项
 
-Full browser regression of Operator, representative load/failure tests, secure HTTPS deployment, backup recovery rehearsal, authenticated intake if participants do not trust the operator, and circuit ABI/source provenance review. Do not describe this system as a trustless exchange or token settlement service.
+仍需完成运营界面的完整浏览器回归、代表性负载和故障测试、安全 HTTPS 部署、备份恢复演练，以及电路 ABI 与源码来源审查。如果参与者不信任运营者，还需要具备身份验证的订单录入机制。不得将本系统描述为无需信任的交易所或代币结算服务。

@@ -1,27 +1,27 @@
-# LotGate — TapeOut batch auctions on X Layer
+# LotGate — 基于 X Layer 和 TapeOut 的批量拍卖应用
 
-LotGate là ứng dụng đấu giá theo lô dành cho một operator: nhập lệnh → khóa đầu vào → xếp hàng thực thi qua CPU TapeOut trên X Layer → kiểm tra phân bổ → xuất receipt JSON.
+LotGate 面向单一运营者，提供批量拍卖流程：录入订单 → 锁定输入 → 排队调用 X Layer 上的 TapeOut CPU → 检查分配结果 → 导出 JSON 回执。
 
-**Phạm vi: tính toán, không custody và không chuyển tài sản.** `eth_call` không lưu trạng thái phiên lên blockchain. Backend quản lý đầu vào và state giữa các lần gọi; không có local fallback trong đường chạy Operator.
+**功能范围仅限计算：不托管或转移资产。** `eth_call` 不会将会话状态写入区块链。后端管理输入和调用之间的状态；运营端不会回退到本地计算。
 
-## Chạy để chấm điểm
+## 评审快速启动
 
-Yêu cầu **Node.js >=22**, npm và kết nối HTTPS tới RPC. Không cần ví, private key hay cài thêm runtime dependency.
+需要 **Node.js >=22**、npm 和能够通过 HTTPS 访问 RPC 的网络环境。无需钱包、私钥或额外运行时依赖。
 
 ```sh
 git clone https://github.com/haivcon/LoteGate.git
 cd LoteGate
 ```
 
-PowerShell:
+Windows PowerShell：
 
 ```powershell
 $env:LOTGATE_TOKEN = node -e "console.log(require('node:crypto').randomBytes(32).toString('hex'))"
-$env:LOTGATE_TOKEN # copy vào màn hình đăng nhập; không chia sẻ công khai
+$env:LOTGATE_TOKEN # 将令牌复制到登录界面，请勿公开分享
 npm start
 ```
 
-macOS/Linux:
+macOS/Linux：
 
 ```sh
 export LOTGATE_TOKEN="$(node -e "console.log(require('node:crypto').randomBytes(32).toString('hex'))")"
@@ -29,35 +29,37 @@ printf '%s\n' "$LOTGATE_TOKEN"
 npm start
 ```
 
-Mở **http://127.0.0.1:4173**, nhập token, tạo batch, thêm lệnh mua giá 20 số lượng 3 và lệnh bán giá 10 số lượng 3, khóa lệnh rồi chạy. Kỳ vọng giá khớp 10, volume 3. Dữ liệu phiên nằm trong thư mục `data/` (không commit).
+打开 **http://127.0.0.1:4173**，输入令牌并创建批次。添加价格为 20、数量为 3 的买单，以及价格为 10、数量为 3 的卖单；锁定订单后启动执行。预期成交价为 10，成交量为 3。会话数据保存在 `data/` 中，不提交到 Git。
 
-**Thực thi live có thể mất nhiều phút**, không phải giao dịch tức thời. Không gửi tiền thật.
+**实时 RPC 执行可能需要数分钟**，并非即时交易。请勿发送真实资金。
 
-## Kiến trúc và circuit
+## 架构与电路
 
-- `web/operator/`: giao diện tiếng Việt, tạo/chạy phiên và tải receipt.
-- `scripts/operator-server.mjs`: HTTP API có xác thực, origin check và giới hạn request.
-- `scripts/batch-service.mjs`: hàng đợi tuần tự, revision, lưu đĩa, single-writer lock, idempotency API.
-- `src/async-session.mjs`, `scripts/xlayer-runtime.mjs`: thực thi async, state CPU trả về được dùng cho RPC kế tiếp; kiểm tra bytes/dimensions circuit tại block cố định.
-- `src/verify.mjs`: oracle kiểm kết quả, bảo toàn khối lượng và giới hạn giá.
-- `circuits/serial/`: ba artifact runtime đang dùng (BLIF, binary và manifest).
-- `deployment/xlayer.json`: định danh triển khai công khai. Các ghi chú verification trong file là lịch sử, không phải chứng nhận độc lập.
+- `web/operator/`：越南语运营界面，用于创建和执行批次、下载回执。本次文档汉化不改变界面语言。
+- `scripts/operator-server.mjs`：HTTP API，包含身份验证、来源检查和请求限制。
+- `scripts/batch-service.mjs`：串行队列、修订版本检查、磁盘存储、单写入者锁和 API 幂等处理。
+- `src/async-session.mjs`、`scripts/xlayer-runtime.mjs`：异步执行，将 CPU 返回的状态传入下一次 RPC 调用，并在固定区块检查电路字节和维度。
+- `src/verify.mjs`：独立算术校验器，检查结果、数量守恒和订单限价。
+- `circuits/serial/`：实际运行使用的三个电路产物，包括 BLIF、二进制文件和清单。
+- `deployment/xlayer.json`：公开部署标识。其中的验证说明是历史记录，不构成独立认证。
 
-X Layer chain **196**, CPU **`0xAa13ae45b0B2D52f210Ad7Ef12997113a0ebAF21`**. Circuit refund **#1**, multiplier serial **#2**, controller serial **#3**. RPC runtime mặc định `https://tapeout.net/rpc-xlayer`; có thể đổi bằng biến `XLAYER_RPC`.
+X Layer 链 ID 为 **196**，CPU 地址为 **`0xAa13ae45b0B2D52f210Ad7Ef12997113a0ebAF21`**。退款电路编号为 **#1**，串行乘法器为 **#2**，串行控制器为 **#3**。默认运行时 RPC 为 `https://tapeout.net/rpc-xlayer`，可通过 `XLAYER_RPC` 覆盖。
 
-Mua xếp giá giảm dần, bán tăng dần; cùng giá ưu tiên thứ tự nhập. Giá gross thống nhất là giá giới hạn seller cuối đã khớp. Giá/số lượng là số nguyên lot/tick, không phải số thập phân token. Phí seller làm tròn xuống theo từng lệnh.
+买单按价格降序排列，卖单按价格升序排列；同价订单按录入顺序优先。统一手续费前成交价为最后一笔已成交卖单的限价。价格和数量采用整数报价单位与整数数量单位，不直接表示带小数的代币金额。卖方手续费按每笔订单向下取整。
 
-## Kiểm thử và tái lập
+## 测试与复现
 
-`npm run verify` chạy test Operator, quy tắc đấu giá, receipt và checksum artifact mà không cần parser hoặc RPC. Mô hình arithmetic trong `src/reference-controller.mjs` chỉ dùng để đối chiếu test/benchmark, không phải fallback của Operator.
+`npm run verify` 执行运营端、拍卖规则、回执及产物校验和测试，无需解析器或 RPC。`src/reference-controller.mjs` 中的算术模型仅用于测试和基准结果对照，不是运营端的备用执行路径。
 
-Chỉ tái tạo/đối chiếu bản build (`npm run generate:serial`, `npm run check:serial`) mới cần parser TapeOut bên ngoài đã review, SHA-256:
+只有重新生成或核对构建产物（`npm run generate:serial`、`npm run check:serial`）才需要经过审阅的外部 TapeOut 解析器。其 SHA-256 必须为：
 
 ```text
 a794be064f8a0e1317f2de4ed909cc397f24a6836c048a881b124afffdf42084
 ```
 
-Parser phải export `parse`, `expand`, `compile`, `decode`, `encode`, `limits`. Bản sao bên thứ ba **không được đóng gói** vì chưa xác nhận quyền phân phối; cần lấy đúng snapshot từ người nộp dự án hoặc nhà cung cấp TapeOut qua kênh được phép. Đây là hạn chế tái lập hiện tại. Operator dùng binary đã commit và không cần parser này để khởi động/chạy RPC.
+解析器必须导出 `parse`、`expand`、`compile`、`decode`、`encode` 和 `limits`。由于尚未确认再分发权限，仓库**不包含第三方解析器副本**。请通过获授权的渠道向项目提交者或 TapeOut 提供方获取对应快照。这是当前的构建复现限制。运营端使用已提交的二进制文件，启动和调用 RPC 均不需要该解析器。
+
+以下解析器路径为示例，请替换为实际文件路径。
 
 ```powershell
 $env:TAPEOUT_PARSER = 'path/to/reviewed-parser.mjs'
@@ -71,13 +73,14 @@ npm run verify
 npm run check:serial
 ```
 
-Benchmark live (gọi RPC, không broadcast transaction): `node scripts/benchmark-operator.mjs 2`. Báo cáo được ghi vào `reports/`, không commit. Xác minh receipt: `node scripts/verify-receipt.mjs path/to/receipt.json`.
+实时基准测试：`node scripts/benchmark-operator.mjs 2`。该命令调用 RPC，但不广播交易；报告写入 `reports/`，不提交到 Git。
 
+回执验证：`node scripts/verify-receipt.mjs path/to/receipt.json`。请替换为实际导出的回执路径。
 
-## Ranh giới tin cậy / chưa hoàn thành
+## 信任边界与未完成工作
 
-Receipt kiểm hash và arithmetic, **không** chứng minh chữ ký người đặt lệnh, tính đầy đủ của intake, RPC thực sự đã chạy hay thanh toán. Operator và filesystem vẫn được tin cậy. Chưa có tài khoản riêng, cancellation hoặc audit log đầy đủ; UI chưa gửi `requestId` dù API đã hỗ trợ.
+回执验证检查哈希和算术结果，**不能**证明下单者签名、订单录入的完整性、RPC 是否实际执行或付款是否发生。系统仍信任运营者和文件系统。目前尚无独立用户账户、取消功能或完整审计日志；虽然 API 支持 `requestId`，界面尚未发送该字段。
 
-Queued jobs được khôi phục; job đang chạy khi dừng trở thành INTERRUPTED và cần retry. Không xóa stale lock khi chưa xác nhận tiến trình cũ đã dừng. Cần nghiệm thu crash recovery, browser Operator, tải đại diện, backup/restore, HTTPS, supervision và provenance trước production.
+排队任务可在重启后恢复；停机时正在运行的任务会变为 `INTERRUPTED`，需要显式重试。确认原进程已停止之前，不得删除遗留锁文件。投入生产前仍需验证崩溃恢复、运营界面浏览器行为、代表性负载、备份恢复、HTTPS、进程监督和部署来源。
 
-Chi tiết: [Operator](OPERATOR.md), [Operating model](OPERATING-MODEL.md). Repository chỉ giữ ứng dụng Operator, ba circuit đang dùng và công cụ kiểm tra trực tiếp liên quan.
+详细说明：[运营端指南](OPERATOR.md)、[运营模型](OPERATING-MODEL.md)。仓库仅保留运营端应用、实际使用的三个电路及直接相关的检查工具。
