@@ -31,7 +31,7 @@ npm start
 
 Mở **http://127.0.0.1:4173**, nhập token, tạo batch, thêm lệnh mua giá 20 số lượng 3 và lệnh bán giá 10 số lượng 3, khóa lệnh rồi chạy. Kỳ vọng giá khớp 10, volume 3. Dữ liệu phiên nằm trong thư mục `data/` (không commit).
 
-**Thực thi live có thể mất nhiều phút**, không phải giao dịch tức thời. Không gửi tiền thật. `npm run start:local` là giao diện local cũ, không chứng minh thực thi X Layer.
+**Thực thi live có thể mất nhiều phút**, không phải giao dịch tức thời. Không gửi tiền thật.
 
 ## Kiến trúc và circuit
 
@@ -42,9 +42,6 @@ Mở **http://127.0.0.1:4173**, nhập token, tạo batch, thêm lệnh mua giá
 - `src/verify.mjs`: oracle kiểm kết quả, bảo toàn khối lượng và giới hạn giá.
 - `circuits/serial/`: ba artifact runtime đang dùng (BLIF, binary và manifest).
 - `deployment/xlayer.json`: định danh triển khai công khai. Các ghi chú verification trong file là lịch sử, không phải chứng nhận độc lập.
-- `circuits/modular/`, `circuits/stateful/`: artifact tham chiếu/regression, không phải yêu cầu deploy thêm.
-- `test/fixtures/reference-hardware.mjs`: mô hình tham chiếu phục vụ differential tests.
-- `contracts/`: sandbox/benchmark local, **không** phải hợp đồng settlement hoặc dependency của Operator.
 
 X Layer chain **196**, CPU **`0xAa13ae45b0B2D52f210Ad7Ef12997113a0ebAF21`**. Circuit refund **#1**, multiplier serial **#2**, controller serial **#3**. RPC runtime mặc định `https://tapeout.net/rpc-xlayer`; có thể đổi bằng biến `XLAYER_RPC`.
 
@@ -52,7 +49,9 @@ Mua xếp giá giảm dần, bán tăng dần; cùng giá ưu tiên thứ tự n
 
 ## Kiểm thử và tái lập
 
-Full suite và rebuild artifact cần parser TapeOut bên ngoài đã review, SHA-256:
+`npm run verify` chạy test Operator, quy tắc đấu giá, receipt và checksum artifact mà không cần parser hoặc RPC. Mô hình arithmetic trong `src/reference-controller.mjs` chỉ dùng để đối chiếu test/benchmark, không phải fallback của Operator.
+
+Chỉ tái tạo/đối chiếu bản build (`npm run generate:serial`, `npm run check:serial`) mới cần parser TapeOut bên ngoài đã review, SHA-256:
 
 ```text
 a794be064f8a0e1317f2de4ed909cc397f24a6836c048a881b124afffdf42084
@@ -74,7 +73,6 @@ npm run check:serial
 
 Benchmark live (gọi RPC, không broadcast transaction): `node scripts/benchmark-operator.mjs 2`. Báo cáo được ghi vào `reports/`, không commit. Xác minh receipt: `node scripts/verify-receipt.mjs path/to/receipt.json`.
 
-Tool tùy chọn: browser legacy dùng Playwright 1.58.2 (`PLAYWRIGHT_PACKAGE`), EVM local dùng solc 0.8.30 và Ganache 7.9.2; xem `scripts/external.mjs` và các script gọi nó. Chúng không thuộc kiểm thử UI Operator đã xác nhận.
 
 ## Ranh giới tin cậy / chưa hoàn thành
 
@@ -82,4 +80,4 @@ Receipt kiểm hash và arithmetic, **không** chứng minh chữ ký người �
 
 Queued jobs được khôi phục; job đang chạy khi dừng trở thành INTERRUPTED và cần retry. Không xóa stale lock khi chưa xác nhận tiến trình cũ đã dừng. Cần nghiệm thu crash recovery, browser Operator, tải đại diện, backup/restore, HTTPS, supervision và provenance trước production.
 
-Chi tiết: [Operator](OPERATOR.md), [Operating model](OPERATING-MODEL.md), [Serial controller](SERIAL-CONTROLLER.md), [Batch engine local](BATCH-ENGINE.md). Tài liệu thiết kế cũ mô tả các giai đoạn trước; README và OPERATOR là điểm bắt đầu của bản nộp hiện tại.
+Chi tiết: [Operator](OPERATOR.md), [Operating model](OPERATING-MODEL.md). Repository chỉ giữ ứng dụng Operator, ba circuit đang dùng và công cụ kiểm tra trực tiếp liên quan.

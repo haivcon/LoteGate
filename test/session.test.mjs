@@ -6,7 +6,7 @@ import { verifyResult } from '../src/verify.mjs';
 const orders = JSON.parse(await readFile(new URL('../examples/orders.json', import.meta.url)));
 
 test('failed module calls permanently block session progress and settlement', () => {
-  const s = new Session(orders, {}, { evaluate() { throw new Error('Backend unavailable'); } });
+  const s = new Session(orders, {}, { createController() { return { multiply() {}, refund() {}, tick() { throw new Error('Backend unavailable'); } }; } });
   assert.throws(() => s.step(), /Backend unavailable/);
   assert.equal(s.volume, 0n); assert.equal(s.trace.length, 0);
   assert.throws(() => s.step(), /Session failed/);

@@ -7,23 +7,12 @@
     "node": ">=22"
   },
   "scripts": {
-    "test": "node --test test/*.test.mjs",
-    "generate": "node scripts/modular.mjs",
-    "artifacts:check": "node scripts/modular.mjs --check",
-    "verify": "npm run artifacts:check && npm test",
-    "demo": "node scripts/demo.mjs",
-    "batch": "node scripts/batch.mjs",
     "start": "node scripts/operator-server.mjs",
-    "start:local": "node scripts/serve.mjs",
-    "test:browser": "node scripts/browser.mjs",
-    "test:evm": "node scripts/evm.mjs",
-    "benchmark": "node scripts/benchmark.mjs",
-    "demo:compiled": "node scripts/demo-modular.mjs",
-    "demo:serial": "node scripts/demo-serial.mjs",
-    "probe:cpu": "node scripts/probe-cpu.mjs",
+    "test": "node --test test/*.test.mjs",
+    "verify": "npm test",
     "generate:serial": "node scripts/serial-artifacts.mjs",
     "check:serial": "node scripts/serial-artifacts.mjs --check",
-    "generate:stateful": "node scripts/stateful.mjs",
-    "check:stateful": "node scripts/stateful.mjs --check --require-all"
+    "benchmark": "node scripts/benchmark-operator.mjs",
+    "verify:receipt": "node scripts/verify-receipt.mjs"
   }
 }

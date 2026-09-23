@@ -14,13 +14,13 @@ import { mkdtemp, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { executeBatch, AsyncSerialRuntime } from '../src/async-session.mjs';
-import { ModularController } from '../src/modular.mjs';
+import { ReferenceController } from '../src/reference-controller.mjs';
 import { Session } from '../src/session.mjs';
 import { batchService } from '../scripts/batch-service.mjs';
 import { operatorServer } from '../scripts/operator-server.mjs';
 import { verifyReceipt } from '../scripts/verify-receipt.mjs';
 const orders = [{ id: 'b', side: 'buy', price: '20', quantity: '5' }, { id: 's', side: 'sell', price: '10', quantity: '3' }];
-const factory = async () => new ModularController();
+const factory = async () => new ReferenceController();
 test('async batch agrees with synchronous oracle and fails closed', async () => {
   assert.deepEqual(await executeBatch(orders, { feeBps: 100 }, await factory()), new Session(orders, { feeBps: 100 }).run());
   const r = new AsyncSerialRuntime(async () => { throw Error('offline'); });

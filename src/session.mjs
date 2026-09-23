@@ -1,5 +1,5 @@
 import { uint32 } from './match.mjs';
-import { ModularController } from './modular.mjs';
+import { ReferenceController } from './reference-controller.mjs';
 
 export function normalize(orders, options = {}) {
   const config = { mode: 'double', feeBps: 0, maxOrders: 64, ...options };
@@ -22,7 +22,7 @@ export class Session {
   constructor(orders, options = {}, runtime = {}) {
     const { rows, config } = normalize(orders, options);
     this.orders = rows; this.config = Object.freeze(config); this.rows = rows.map(r => ({ ...r, remaining: r.quantity, filled: 0n }));
-    [this.buys, this.sells] = sortedBook(this.rows); this.i = 0; this.j = 0; this.volume = 0n; this.clearingPrice = 0n; this.done = false; this.trace = []; this.failed = false; this.machine = runtime.createController ? runtime.createController() : new ModularController(runtime.evaluate);
+    [this.buys, this.sells] = sortedBook(this.rows); this.i = 0; this.j = 0; this.volume = 0n; this.clearingPrice = 0n; this.done = false; this.trace = []; this.failed = false; this.machine = runtime.createController ? runtime.createController() : new ReferenceController();
     this.multiply = this.machine.multiply.bind(this.machine);
     this.refund = this.machine.refund.bind(this.machine);
   }

@@ -4,21 +4,19 @@
   "rpc": "https://rpc.xlayer.tech",
   "factory": "0x1f09daefa827f02cbb40967cc91b259763760761",
   "cpu": "0xAa13ae45b0B2D52f210Ad7Ef12997113a0ebAF21",
-  "status": "ALL_THREE_ARTIFACTS_AND_DIFFERENTIAL_VECTORS_PASS_ASYNC_BATCH_INTEGRATION_PENDING",
-  "executionVerification": {
-    "report": "reports/xlayer-execution.json",
-    "block": "0x4411bff",
-    "checkedSteps": 422,
-    "scope": "Read-only differential replay with locally supplied reference states; not persisted state or full RPC BatchEngine execution",
-    "result": "PASS"
-  },
+  "status": "OPERATOR_RUNTIME_CONFIGURATION_READ_ONLY_NO_SETTLEMENT",
   "circuits": {
     "auction_controller_serial": {
       "circuitId": 3,
       "checkedBlock": "0x4411ab2",
       "binarySha256": "a12f778b5116c406ceadf5df792b077abf8a60867fd7702e10757fdfe6172c56",
       "binaryBytes": 33312,
-      "dimensions": [133, 199, 243, 4863],
+      "dimensions": [
+        133,
+        199,
+        243,
+        4863
+      ],
       "verification": "Exact netlist byte and dimension match via read-only RPC; execution vectors, factory registration and transaction provenance not yet checked"
     },
     "multiply32_serial": {
@@ -26,7 +24,12 @@
       "checkedBlock": "0x4411757",
       "binarySha256": "0164a7ef0e0af06709a22ead1648b4570ad0272c68a31dcc19ad1cd21fd60c5b",
       "binaryBytes": 24622,
-      "dimensions": [67, 66, 104, 3562],
+      "dimensions": [
+        67,
+        66,
+        104,
+        3562
+      ],
       "verification": "Exact netlist byte and dimension match via read-only RPC; execution vectors, factory registration and transaction provenance not yet checked"
     },
     "refund64": {
@@ -34,7 +37,12 @@
       "checkedBlock": "0x4411390",
       "binarySha256": "2819cc2e0d1cfa709e94b5ea7895693b8f7d141ec6ee90375ff2a4e20516c949",
       "binaryBytes": 16597,
-      "dimensions": [128, 65, 0, 2371],
+      "dimensions": [
+        128,
+        65,
+        0,
+        2371
+      ],
       "verification": "Exact netlist byte match via read-only RPC; execution vectors, factory registration and transaction provenance not yet checked"
     }
   },
@@ -61,6 +69,10 @@
     "function circuitInfo(uint256 id) view returns (uint32 nIn, uint32 nOut, uint32 nState, uint32 gateCount)",
     "event TapedOut(uint256 indexed circuitId, address indexed author, uint32 gateCount, uint32 nState)"
   ],
-  "deploymentOrder": ["refund64", "multiply32_serial", "auction_controller_serial"],
+  "deploymentOrder": [
+    "refund64",
+    "multiply32_serial",
+    "auction_controller_serial"
+  ],
   "settlementEnabled": false
 }
