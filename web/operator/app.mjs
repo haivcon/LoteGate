@@ -53,7 +53,7 @@ $('create').onsubmit = e => { e.preventDefault(); perform(async () => {
   const r = await api('batches', { name: $('name').value, mode: $('mode').value, feeBps: Number($('fee').value), orders }); selected = r.id; await refresh(); notice('订单已锁定。请在结果区域点击开始计算分配。'); $('detail-title').focus();
 }); };
 $('run').onclick = () => perform(async () => { if (!current || !confirm('确认开始执行？根据订单数量和 RPC 状况，计算可能需要几分钟或更长时间。此操作不会转移代币。')) return; await api('batches/' + current.id + '/run', { revision: current.revision }); await refresh(); });
-$('download').onclick = () => { if (!current?.result) return; const url = URL.createObjectURL(new Blob([JSON.stringify(current, null, 2)], { type: 'application/json' })); const a = element('a'); a.href = url; a.download = 'LotGate-' + current.id + '.json'; a.click(); setTimeout(() => URL.revokeObjectURL(url), 1000); };
+$('download').onclick = () => { if (!current?.result) return; const url = URL.createObjectURL(new Blob([JSON.stringify(current, null, 2)], { type: 'application/json' })); const a = element('a'); a.href = url; a.download = 'LoteGate-' + current.id + '.json'; a.click(); setTimeout(() => URL.revokeObjectURL(url), 1000); };
 setInterval(() => { if (key && !$('workspace').hidden && !document.hidden) perform(refresh); }, 5000);
 addOrder(); addOrder();
 function updateSummary() {
@@ -83,6 +83,6 @@ $('csv').onclick = () => {
   const fields = ['id', 'filled', 'unfilled', 'quotePaid', 'quoteReceived', 'fee'];
   const rows = [['批次', current.name], ['批次 ID', current.id], ['状态', '仅计算，尚未付款'], ['成交价', current.result.clearingPrice], ['订单编号', '成交数量', '剩余数量', '应付金额', '应收金额', '手续费'], ...current.result.allocations.map(a => fields.map(f => a[f]))];
   const url = URL.createObjectURL(new Blob(['\uFEFF' + rows.map(row => row.map(csvCell).join(',')).join('\r\n')], { type: 'text/csv;charset=utf-8' }));
-  const a = element('a'); a.href = url; a.download = 'LotGate-' + current.id + '.csv'; a.click(); setTimeout(() => URL.revokeObjectURL(url), 1000);
+  const a = element('a'); a.href = url; a.download = 'LoteGate-' + current.id + '.csv'; a.click(); setTimeout(() => URL.revokeObjectURL(url), 1000);
 };
 updateSummary();

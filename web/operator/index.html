@@ -1,13 +1,13 @@
 <!doctype html>
 <html lang="zh-CN">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>LotGate · 交易分配工作台</title><link rel="stylesheet" href="/style.css"><script type="module" src="/app.mjs"></script></head>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>LoteGate · 交易分配工作台</title><link rel="stylesheet" href="/style.css"><script type="module" src="/app.mjs"></script></head>
 <body>
-<header><a href="/" class="brand">LotGate<span>Operator workspace</span></a><span class="network">仅计算 · 不转移资金</span></header>
+<header><a href="/" class="brand">LoteGate<span>Operator workspace</span></a><span class="network">仅计算 · 不转移资金</span></header>
 <main>
 <section class="intro"><div><p class="eyebrow">为交易组织者设计</p><h1>集中录入订单，<br>清楚核对每一笔分配。</h1><p>适用于小规模集中采购与批量交易试验。由一位运营者收集买卖需求，计算成交分配，再安排外部付款与交付。</p></div><aside><strong>这不是自助交易所</strong><p>参与者不在此注册或付款。请先在系统外约定商品规格、数量单位和报价单位；所有价格与数量均使用整数。</p><small>X Layer · TapeOut 计算 / 独立算术核验</small></aside></section>
 <ol class="steps" aria-label="操作流程"><li><b>01</b><span>准备订单<small>确认商品与单位</small></span></li><li><b>02</b><span>核对并锁定<small>保存后不可修改</small></span></li><li><b>03</b><span>开始计算<small>等待分配结果</small></span></li><li><b>04</b><span>导出对账<small>付款在系统外完成</small></span></li></ol>
-<section class="card" id="access"><h2>连接运营工作台</h2><p>请使用启动服务时设置的访问密钥，无需连接钱包。</p><form id="login"><label>运营者访问密钥<input id="token" type="password" required minlength="32" autocomplete="off" aria-describedby="token-help"></label><button>连接工作台</button></form><p id="token-help">密钥仅保存在页面内存中，刷新页面后需重新输入。不要公开分享。</p><details><summary>第一次使用？如何获取访问密钥</summary><p>本机运营者：在启动服务的同一个 PowerShell 窗口中，用下列命令查看已设置的密钥。远程访问者请向部署管理员获取密钥，不要使用明文公网 HTTP。</p><pre>$env:LOTGATE_TOKEN</pre><p>如果服务尚未启动，在项目目录的同一个 PowerShell 窗口依次执行：</p><pre>$env:LOTGATE_TOKEN = node -e "console.log(require('node:crypto').randomBytes(32).toString('hex'))"
-$env:LOTGATE_TOKEN
+<section class="card" id="access"><h2>连接运营工作台</h2><p>请使用启动服务时设置的访问密钥，无需连接钱包。</p><form id="login"><label>运营者访问密钥<input id="token" type="password" required minlength="32" autocomplete="off" aria-describedby="token-help"></label><button>连接工作台</button></form><p id="token-help">密钥仅保存在页面内存中，刷新页面后需重新输入。不要公开分享。</p><details><summary>第一次使用？如何获取访问密钥</summary><p>本机运营者：在启动服务的同一个 PowerShell 窗口中，用下列命令查看已设置的密钥。远程访问者请向部署管理员获取密钥，不要使用明文公网 HTTP。</p><pre>$env:LOTEGATE_TOKEN</pre><p>如果服务尚未启动，在项目目录的同一个 PowerShell 窗口依次执行：</p><pre>$env:LOTEGATE_TOKEN = node -e "console.log(require('node:crypto').randomBytes(32).toString('hex'))"
+$env:LOTEGATE_TOKEN
 npm start</pre></details></section>
 <p id="notice" role="status" aria-live="polite"></p>
 <div id="workspace" hidden>
@@ -20,5 +20,5 @@ npm start</pre></details></section>
 <details><summary>成交价格和优先顺序如何确定？</summary><p>买单按限价从高到低，卖单从低到高匹配；同价订单按录入顺序优先。统一成交价为最后一笔已成交卖单的限价。订单编号必须唯一，单一卖方模式最多录入一笔卖单。</p></details>
 <div class="review"><p class="eyebrow">02 / 核对并锁定</p><p id="order-summary" aria-live="polite"></p><p>锁定后不能修改订单。此步骤仅保存输入，下一步需要单独启动计算。</p><button id="create-button">核对并锁定订单</button></div></form></section>
 <section class="card result-card" id="result-panel"><p class="eyebrow">03–04 / 计算与对账</p><h2 id="detail-title" tabindex="-1">等待选择批次</h2><p id="phase">先在左侧创建批次，或从上方列表选择已保存的批次。</p><div class="callout" id="next-step">建议先填入教学示例，了解完整操作流程。</div><p id="progress" aria-live="polite"></p><button id="run" hidden>开始计算分配</button><div id="metrics" class="metrics"></div><div id="allocations" class="table-wrap"></div><div class="toolbar"><button id="csv" class="secondary" hidden>导出对账表 CSV</button><button id="download" class="secondary" hidden>下载验证回执 JSON</button></div><details><summary>技术验证信息（可选）</summary><p>JSON 用于独立核验；CSV 用于人工对账。两者均不能证明实际付款或订单录入的完整性。</p><pre id="technical">尚未选择批次。</pre></details></section>
-</div></div></main><footer>LotGate · 试验性运营工具，尚未完成生产认证。请勿将计算结果视为付款凭证。</footer>
+</div></div></main><footer>LoteGate · 试验性运营工具，尚未完成生产认证。请勿将计算结果视为付款凭证。</footer>
 </body></html>

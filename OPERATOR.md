@@ -1,4 +1,4 @@
-# LotGate 运营端指南
+# LoteGate 运营端指南
 
 默认命令 `npm start` 启动带身份验证的运营端应用。本版本仅提供计算，不涉及资产托管、代币转账、钱包签名或交易广播。
 
@@ -7,13 +7,17 @@
 在仓库根目录执行：
 
 ```powershell
-$env:LOTGATE_TOKEN = node -e "console.log(require('node:crypto').randomBytes(32).toString('hex'))"
-$env:LOTGATE_DATA = './data'
+$env:LOTEGATE_TOKEN = node -e "console.log(require('node:crypto').randomBytes(32).toString('hex'))"
+$env:LOTEGATE_DATA = './data'
 $env:XLAYER_RPC = 'https://tapeout.net/rpc-xlayer'
 npm start
 ```
 
-打开 http://127.0.0.1:4173 并输入生成的令牌。可通过 `$env:LOTGATE_TOKEN` 在终端查看令牌，请勿公开。对外提供服务时，配置 `LOTGATE_ORIGIN=https://your-domain`，在本机回环地址的 4173 端口前部署 HTTPS 反向代理，并保留公开域名对应的 Host 请求头。不得通过公网明文 HTTP 传输访问密钥。部署时应使用密钥管理工具和进程监督服务。运行环境要求 Node.js >=22，无需额外运行时依赖。
+打开 http://127.0.0.1:4173 并输入生成的令牌。可通过 `$env:LOTEGATE_TOKEN` 在终端查看令牌，请勿公开。对外提供服务时，配置 `LOTEGATE_ORIGIN=https://your-domain`，在本机回环地址的 4173 端口前部署 HTTPS 反向代理，并保留公开域名对应的 Host 请求头。不得通过公网明文 HTTP 传输访问密钥。部署时应使用密钥管理工具和进程监督服务。运行环境要求 Node.js >=22，无需额外运行时依赖。
+
+## 电路查看链接
+
+查看当前配置的 CPU：[TapeOut](https://tapeout.net/#l2/xlayer/0xAa13ae45b0B2D52f210Ad7Ef12997113a0ebAF21) · [OKLink 地址浏览器](https://www.oklink.com/x-layer/evm/address/0xAa13ae45b0B2D52f210Ad7Ef12997113a0ebAF21)。这些链接用于查看部署信息，不是付款入口或独立认证。
 
 ## 工作流程与保障措施
 

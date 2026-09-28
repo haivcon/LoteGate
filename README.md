@@ -1,8 +1,12 @@
-# LotGate — 基于 X Layer 和 TapeOut 的批量拍卖应用
+# LoteGate — 基于 X Layer 和 TapeOut 的批量拍卖应用
 
-LotGate 面向单一运营者，提供批量拍卖流程：录入订单 → 锁定输入 → 排队调用 X Layer 上的 TapeOut CPU → 检查分配结果 → 导出 JSON 回执。
+LoteGate 面向单一运营者，提供批量拍卖流程：录入订单 → 锁定输入 → 排队调用 X Layer 上的 TapeOut CPU → 检查分配结果 → 导出 JSON 回执。
 
 **功能范围仅限计算：不托管或转移资产。** `eth_call` 不会将会话状态写入区块链。后端管理输入和调用之间的状态；运营端不会回退到本地计算。
+
+项目名称为 **LoteGate**，GitHub 仓库地址为 https://github.com/haivcon/LoteGate。
+
+
 
 ## 评审快速启动
 
@@ -16,16 +20,16 @@ cd LoteGate
 Windows PowerShell：
 
 ```powershell
-$env:LOTGATE_TOKEN = node -e "console.log(require('node:crypto').randomBytes(32).toString('hex'))"
-$env:LOTGATE_TOKEN # 将令牌复制到登录界面，请勿公开分享
+$env:LOTEGATE_TOKEN = node -e "console.log(require('node:crypto').randomBytes(32).toString('hex'))"
+$env:LOTEGATE_TOKEN # 将令牌复制到登录界面，请勿公开分享
 npm start
 ```
 
 macOS/Linux：
 
 ```sh
-export LOTGATE_TOKEN="$(node -e "console.log(require('node:crypto').randomBytes(32).toString('hex'))")"
-printf '%s\n' "$LOTGATE_TOKEN"
+export LOTEGATE_TOKEN="$(node -e "console.log(require('node:crypto').randomBytes(32).toString('hex'))")"
+printf '%s\n' "$LOTEGATE_TOKEN"
 npm start
 ```
 
@@ -43,7 +47,7 @@ npm start
 - `circuits/serial/`：实际运行使用的三个电路产物，包括 BLIF、二进制文件和清单。
 - `deployment/xlayer.json`：公开部署标识。其中的验证说明是历史记录，不构成独立认证。
 
-X Layer 链 ID 为 **196**，CPU 地址为 **`0xAa13ae45b0B2D52f210Ad7Ef12997113a0ebAF21`**。退款电路编号为 **#1**，串行乘法器为 **#2**，串行控制器为 **#3**。默认运行时 RPC 为 `https://tapeout.net/rpc-xlayer`，可通过 `XLAYER_RPC` 覆盖。
+X Layer 链 ID 为 **196**，CPU 地址为 **[`0xAa13ae45b0B2D52f210Ad7Ef12997113a0ebAF21`](https://www.oklink.com/x-layer/evm/address/0xAa13ae45b0B2D52f210Ad7Ef12997113a0ebAF21)**（[TapeOut](https://tapeout.net/#l2/xlayer/0xAa13ae45b0B2D52f210Ad7Ef12997113a0ebAF21) · [OKLink](https://www.oklink.com/x-layer/evm/address/0xAa13ae45b0B2D52f210Ad7Ef12997113a0ebAF21)）。退款电路编号为 **#1**，串行乘法器为 **#2**，串行控制器为 **#3**。默认运行时 RPC 为 `https://tapeout.net/rpc-xlayer`，可通过 `XLAYER_RPC` 覆盖。
 
 买单按价格降序排列，卖单按价格升序排列；同价订单按录入顺序优先。统一手续费前成交价为最后一笔已成交卖单的限价。价格和数量采用整数报价单位与整数数量单位，不直接表示带小数的代币金额。卖方手续费按每笔订单向下取整。
 
